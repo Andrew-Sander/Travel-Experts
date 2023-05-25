@@ -1,36 +1,76 @@
 <!DOCTYPE html>
-<!--Version 1: Plain html-->
+<!--Version 2: Plain html-->
 <html>
 <!--Main Page: 1- welcome the customer to the site and 2- provide links and menus to the other pages ( +Contact Us +Vacation Package +Customer Registration)-->
 <head>
-
+  <title>Welcome to Travel-Experts</title>
   <style>
-  <!-- This Styles has to be move on an external CSS-File -->
-      .heading-with-image 
+    <!-- This style has to be moved on an external CSS-File -->
+
+    body 
 		{
-			display: flex; /* Set display to flex */
-			align-items: center; /* Align items vertically */
+		  font-family: Arial, sans-serif;
+		  margin: 0;
+		  padding: 0;
 		}
-		.heading-with-image,footer
+    
+    header 
 		{
-			background-color: rgba(0,100,150,0.68);
-			height		:	100px;
+		  background-color: #333;
+		  color: #fff;
+		  padding: 20px;
+		  text-align: center;
+		}
+    
+    nav 
+		{
+		  text-align: center;
+		  margin-top: 20px;
+		}
+    
+    nav a 
+		{
+		  display: inline-block;
+		  margin: 0 10px;
+		  color: #333;
+		  text-decoration: none;
+		  font-weight: bold;
+		}
+    
+    section 
+		{
+		  text-align: center;
+		  margin: 50px auto;
+		}
+    
+    section img 
+		{
+		  width: 300px;
+		  height: 200px;
+		  margin: 10px;
 		}
   </style>
 </head>
-
 <body>
-	<header>
-	<!--Need an image for LOGO-->
-		<div class="heading-with-image">
-			<h1>Welcome to Travel Experts</h1>
-		</div>
-
-	</header>  
-
-
-	<footer>
+  <header>
+  	<!--Need an image for LOGO-->
+    <h1>Welcome to Travel-Experts</h1>
+  </header>
+  
+  <nav>
+    <a href="contact.html">Contact Us</a>
+    <a href="vacation.html">Vacation Package</a>
+    <a href="registration.html">Customer Registration</a>
+  </nav>
+  
+  <section>
+    <img src="package1.jpg" alt="Package 1">
+    <img src="package2.jpg" alt="Package 2">
+    <img src="package3.jpg" alt="Package 3">
+  </section>
+  
+  	<footer>
 	</footer>
-		
+	
 </body>
 </html>
