@@ -1,0 +1,32 @@
+body {
+    margin-top: 0;
+}
+.title {
+    display: inline-block;
+    color: rgb(72, 83, 94);
+}
+.navList {
+    float: right;
+    padding: 0;
+    height: 27.5px;
+    margin-top: 20px;
+}
+.navLink {
+    display: inline-block;
+    padding: 3px;
+}
+a {
+    text-decoration: none;
+    color: slategray;
+}
+a:hover {
+    color: rgb(36, 43, 51);
+}
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+button {
+    margin: 8px;
+}
