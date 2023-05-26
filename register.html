@@ -1,3 +1,4 @@
+<!-- Andrew Sander -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,29 +42,28 @@
                     <input type="password" name="password" id="password" placeholder="password..." oninput="this.className = ''">
                 </div>
                 <div style="overflow: auto;">
+                    <div style="float: left;">
+                        <button type="button" id="clearBtn" onclick="clearForm()">Clear form</button>
+                    </div>
                     <div style="float: right;">
                         <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                         <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
                     </div>
                 </div>
-                <article style="width: 70%; max-width: 400px; text-align: center; margin: 0 auto;">
+                <div style="width: 70%; max-width: 400px; text-align: center; margin: 0 auto;">
                     <div id="createAccount">
                         <div id="createAccountDiv">
                             <p style="margin-top: 0; padding-top: 40px; font-size: 12pt;">Already have an account?<br><a class="registerLink" href="">Sign in</a></p>
                         </div>
                     </div>            
-                </article>
+                </div>
             </form>  
         </div>
     </main>
     <footer>
-
+        
     </footer>
     <script>
-
-        //modal code
-
-
         // multi-step registration form
         var currentTab = 0;
         showTab(currentTab);
@@ -116,6 +116,16 @@
                 }
             }
             return valid;
+        }
+
+        function clearForm () {
+            var confirmed = window.confirm("Are you sure you want to clear the form? This will clear all previous fields.");
+
+            if (confirmed) {
+                document.getElementById("registerForm").reset();
+            } else {
+
+            }
         }
         // end registration form
     </script>

@@ -1,6 +1,8 @@
 .regBody {
     margin: 0;
-    background-color: rgb(143, 168, 183);
+    /* background-color: rgb(169, 203, 224); */
+    background-image: url("images/maldives.jpg");
+    
 }
 
 /* register navbar */
@@ -24,7 +26,7 @@ a.registerLink {
     color: slategray;
 }
 a.registerLink:hover {
-    color: #04a5aa;
+    color: rgb(142, 236, 189);
 }
 .registerHeader {
     /* position: sticky;
@@ -67,24 +69,23 @@ a.registerLink:hover {
 }
 input.invalid {
     border-color: #e04f4f;
-    border-width: 2px;
 }
 .tab {
     display: none;
 }
-#prevBtn, #nextBtn {
+#prevBtn, #nextBtn, #clearBtn {
     padding: 5px 10px;
     margin: 2px 0;
     font-size: 17px;
     font: Arial;
-    border: 1px solid darkgray;
+    border: 1px solid white;
     border-radius: 5px;
-    background-color: lightgray;
-    color: rgb(72, 83, 94);
+    background-color: rgb(142, 236, 189);
+    color: white;
 
 }
-#prevBtn:hover, #nextBtn:hover {
-    color: #04a5aa;
+#prevBtn:hover, #nextBtn:hover, #clearBtn:hover {
+    opacity: 0.5;
 }
 .tab h4 {
     margin: 0;
