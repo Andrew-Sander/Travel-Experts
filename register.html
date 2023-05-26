@@ -5,116 +5,119 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        const registerFunction = () => {
-            var myReg = /^[a-z][0-9][a-z] ?\d[a-z]\d$/i;
-            var postalEntry = document.getElementById("postal");
-
-            if (document.getElementById("fname").value == "") {
-                alert("name is empty");
-                return false;
-            }
-            if (document.getElementById("lname").value == "") {
-                alert("name is empty");
-                return false;
-            }
-            if (document.getElementById("phone").value == "") {
-                alert("phone is empty");
-                return false;
-            } 
-            if (document.getElementById("email").value == "") {
-                alert("email is empty");
-                return false;
-            } 
-            if (document.getElementById("city").value == "") {
-                alert("city is empty");
-                return false;
-            }
-            if (document.getElementById("province").value == "") {
-                alert("province is empty");
-                return false;
-            }
-            if (document.getElementById("postal").value == "") {
-                alert("postal code is empty");
-                return false;
-            }
-            if (myReg.test(postalEntry.value) === false) {
-                alert("incorrect postal code format");
-                return false;
-            }
-            else {
-                let confirmed = window.confirm("Are you sure you want to submit?");
-
-                if (confirmed) {
-                    document.getElementById("registerForm").submit();
-                    return true
-                }
-            }
-        }
-
-        const resetFunction = () => {
-            let confirmed = window.confirm("Are you sure you want to clear the form?");
-
-            if (confirmed) {
-                document.getElementById("registerForm").reset();
-            } else {
-
-            }
-        }
-    </script>
     <title>Register</title>
 </head>
-<body>
-    <header>
+<body class="regBody">
+    <header class="registerHeader">
         <h2 class="title">Travel Experts</h2>
         <ul class="navList">
-            <li class="navLink"><a href="">Home</a></li>
-            <li class="navLink"><a href="">Packages</a></li>
-            <li class="navLink"><a href="">Contact</a></li>
-            <li class="navLink"><a href="register.html">Sign Up</a></li>
+            <li class="navLink"><a class="registerLink" href="main.html">Home</a></li>
+            <li class="navLink"><a class="registerLink" href="">Packages</a></li>
+            <li class="navLink"><a class="registerLink" href="">Contact</a></li>
+            <li class="navLink"><a class="registerLink" href="register.html">Sign Up</a></li>
         </ul>
     </header>
     <main>
-        <div>
-            <article style="width: 35%; text-align: center; margin: auto;">
-                <h2 style="margin-bottom: 0; color: rgb(72, 83, 94);">Create an Account</h2>
-                <p style="margin-top: 0; font-size: 10pt;">Already have an account?<br><a href="">Sign in</a></p>
-                <form action="bouncer.php" method="get" id="registerForm">
-                    <label for="fname">First Name</label>
-                    <input type="text" name="fname" id="fname">
-                    <br>
-                    <label for="lname">Last Name</label>
-                    <input type="text" name="lname" id="lname">
-                    <br>
-                    <label for="phone">Phone</label>
-                    <br>
-                    <input type="text" name="phone" id="phone">
-                    <br>
-                    <label for="email">e-mail</label>
-                    <br>
-                    <input type="text" name="email" id="email">
-                    <br>
-                    <h3 style="color: rgb(72, 83, 94); margin-bottom: 3px;">Address</h3>
-                    <label for="address">Street address</label>
-                    <input type="text" name="address" id="address">
-                    <br>
-                    <label for="city">City</label>
-                    <br>
-                    <input type="text" name="city" id="city">
-                    <br>
-                    <label for="province">Province</label>
-                    <input type="text" name="province" id="province">
-                    <br>
-                    <label for="postal">Postal Code</label>
-                    <input type="text" name="postal" id="postal">
-                    <br>
-                    <button type="button" onclick="registerFunction()">Submit</button><button type="button" onclick="resetFunction()">Clear</button>
-                </form>            
-            </article>
+        <div id="registerContainer">
+            <!-- Registration form (multi-step) -->
+            <form action="bouncer.php" method="get" id="registerForm">
+                <h2>Create an Account</h2>
+                <div class="tab"><h4>Name</h4>
+                    <input type="text" name="fname" id="fname" placeholder="first name..." oninput="this.className = ''">
+                    <input type="text" name="lname" id="lname" placeholder="last name..." oninput="this.className = ''">
+                </div>
+                <div class="tab"><h4>Contact</h4>
+                    <input type="text" name="phone" id="phone" placeholder="phone number..." oninput="this.className = ''">
+                    <input type="text" name="email" id="email" placeholder="email address..." oninput="this.className = ''">
+                </div>
+                <div class="tab"><h4>Address</h4>
+                    <input type="text" name="address" id="address" placeholder="street address..." oninput="this.className = ''">
+                    <input type="text" name="city" id="city" placeholder="city..." oninput="this.className = ''">
+                    <input type="text" name="province" id="province" placeholder="province..." oninput="this.className = ''">
+                    <input type="text" name="postal" id="postal" placeholder="postal code..." oninput="this.className = ''">
+                </div>
+                <div class="tab"><h4>Username & Password</h4>
+                    <input type="text" name="username" id="username" placeholder="username..." oninput="this.className = ''">
+                    <input type="password" name="password" id="password" placeholder="password..." oninput="this.className = ''">
+                </div>
+                <div style="overflow: auto;">
+                    <div style="float: right;">
+                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                    </div>
+                </div>
+                <article style="width: 70%; max-width: 400px; text-align: center; margin: 0 auto;">
+                    <div id="createAccount">
+                        <div id="createAccountDiv">
+                            <p style="margin-top: 0; padding-top: 40px; font-size: 12pt;">Already have an account?<br><a class="registerLink" href="">Sign in</a></p>
+                        </div>
+                    </div>            
+                </article>
+            </form>  
         </div>
     </main>
     <footer>
 
     </footer>
+    <script>
+
+        //modal code
+
+
+        // multi-step registration form
+        var currentTab = 0;
+        showTab(currentTab);
+
+        function showTab(n) {
+            var myTabs = document.getElementsByClassName("tab");
+            myTabs[n].style.display = "block";
+
+            if (n == 0) {
+                document.getElementById("prevBtn").style.display = "none";
+            } else {
+                document.getElementById("prevBtn").style.display = "inline";
+            }
+            if (n == (myTabs.length - 1)) {
+                document.getElementById("nextBtn").innerHTML = "Submit";
+            } else {
+                document.getElementById("nextBtn").innerHTML = "Next";
+            }
+        }
+
+        function nextPrev(n) {
+            var myTabs = document.getElementsByClassName("tab");
+
+            if (n == 1 && !validateForm()) return false;
+
+            myTabs[currentTab].style.display = "none";
+
+            currentTab = currentTab + n;
+
+            if (currentTab >= myTabs.length) {
+                document.getElementById("registerForm").submit();
+                return false;
+            }
+
+            showTab(currentTab);
+        }
+
+        function validateForm () {
+            var myTabs = document.getElementsByClassName("tab");
+            var myInput;
+            var i;
+            var valid = true;
+
+            myInput = myTabs[currentTab].getElementsByTagName("input");
+
+            for (i = 0; i < myInput.length; i++) {
+                if (myInput[i].value == "") {
+                    myInput[i].className += " invalid"
+                    valid = false;
+                }
+            }
+            return valid;
+        }
+        // end registration form
+    </script>
 </body>
 </html>

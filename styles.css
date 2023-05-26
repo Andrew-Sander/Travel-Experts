@@ -1,32 +1,95 @@
-body {
-    margin-top: 0;
+.regBody {
+    margin: 0;
+    background-color: rgb(143, 168, 183);
 }
+
+/* register navbar */
 .title {
     display: inline-block;
     color: rgb(72, 83, 94);
 }
 .navList {
-    float: right;
-    padding: 0;
+    display: inline-block;
+    padding-left: 20px;
     height: 27.5px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 .navLink {
     display: inline-block;
     padding: 3px;
+    font-size: 17px;
 }
-a {
+a.registerLink {
     text-decoration: none;
     color: slategray;
 }
-a:hover {
-    color: rgb(36, 43, 51);
+a.registerLink:hover {
+    color: #04a5aa;
 }
-header {
-    position: sticky;
-    top: 0;
+.registerHeader {
+    /* position: sticky;
+    top: 0; */
     background-color: white;
 }
-button {
-    margin: 8px;
+/* end register navbar */
+
+
+
+/* registration form styling */
+#registerContainer {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+#registerForm {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 40px;
+    width: 70%;
+    max-width: 400px;
+    border-radius: 8px;
+}
+#registerForm h2 {
+    color: rgb(72, 83, 94);
+}
+.tab input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    font: Arial;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 1px 0;
+}
+input.invalid {
+    border-color: #e04f4f;
+    border-width: 2px;
+}
+.tab {
+    display: none;
+}
+#prevBtn, #nextBtn {
+    padding: 5px 10px;
+    margin: 2px 0;
+    font-size: 17px;
+    font: Arial;
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    background-color: lightgray;
+    color: rgb(72, 83, 94);
+
+}
+#prevBtn:hover, #nextBtn:hover {
+    color: #04a5aa;
+}
+.tab h4 {
+    margin: 0;
+    font-size: 17px;
+    font: Arial;
+    color: rgb(72, 83, 94);
+}
+/* End registration form */
