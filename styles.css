@@ -1,3 +1,45 @@
+#mainBody 
+	{
+	  font-family: Arial, sans-serif;
+	  margin: 0;
+	  padding: 0;
+	}
+
+#mainHeader 
+	{
+	  background-color: #333;
+	  color: #fff;
+	  padding: 20px;
+	  text-align: center;
+	}
+
+#mainNav 
+	{
+	  text-align: center;
+	  margin-top: 20px;
+	}
+
+#mainNav a 
+	{
+	  display: inline-block;
+	  margin: 0 10px;
+	  color: #333;
+	  text-decoration: none;
+	  font-weight: bold;
+	}
+
+#mainSection 
+	{
+	  text-align: center;
+	  margin: 50px auto;
+	}
+
+#mainSection img 
+	{
+	  width: 300px;
+	  height: 200px;
+	  margin: 10px;
+	}
 .regBody {
     margin: 0;
     /* background-color: rgb(169, 203, 224); */
