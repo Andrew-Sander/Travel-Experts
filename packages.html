@@ -1,3 +1,4 @@
+<!--Cameron Olmats-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,6 +11,10 @@
 			}
 			#mainContent {
 				width: 70%;
+				height: 70%;
+				float: right;
+				background-color: #E2E2E2;
+				overflow-y: scroll;
 			}
 			table {
 				position: relative;
@@ -17,29 +22,107 @@
 				margin-left: 30%
 				
 			}
-			table, tr, th {
-				border-style: solid;
+			html, body {
+				 height: 100%; width: 100%; margin: 0;
+			}
+			.package-choice {
 			}
 		</style>
-		
+		<script>
+			function openPurchaseWindow(choice) {
+				if choice == "package1" { 
+					window.open("https://en.wikipedia.org/wiki/Room_on_Fire", "_top", "fullscreen=yes");
+				}
+				if choice == "package2" {
+					window.open("https://en.wikipedia.org/wiki/Good_News_for_People_Who_Love_Bad_News", "_top", "fullscreen=yes");
+				}
+			}
+		</script>
 	</head>
 	<!---->
 	<body style="background-color: grey">
 		<header style="background-color: white"><h1 class="title">Travel packages for sale</h1></header>
 		<nav></nav>
+		
+		<!--Scroll box for travel package options-->
+		<!-- Currently the options are just song lyrics and album covers for testing, I'll change it to actual package options soon-->
 		<div id="mainContent">
-			<table>
-				<tr>
-					<th>Location</th>
-					<th>Hotel options</th>
-					<th>Airlines</th>
-				</tr>
-				<tr>
-					<td>Calgary</td>
-					<td>best western</td>
-					<td>air canada</td>
-				</tr>
-			</table>
+			<p>
+			One by one, ticking time bombs won
+			It's not the secrets of the government
+			That's keeping you dumb
+			Oh, it's the other way around, wait
+			What's that sound?
+			One by one, baby, here they come
+			He wants it easy, he want it relaxed
+			Said, "I can do a lot of things, but I can't do that"
+			Two steps forward, then three steps back, alright
+			Won't you take a walk outside? Oh, no
+			Can't you find some other guy? Oh, no
+			One-nine-six-nine, what's that sound? Oh, no
+			Keeping down the underground, oh, no
+			The end has no end, the end has no end
+			The end has no end, the end has no end
+			He want it easy, he want it relaxed
+			Said, "I can do a lot of things, but I can't do that"
+			Two steps forward then three steps back, it won't be easy
+			Won't you take a walk outside? Oh, no
+			Can't you find another guy? Oh, no
+			One-nine-six-three, what's that sound? Oh, no
+			Keeping down the underground, oh, no
+			The end has no end, the end has no end
+			The end has no end, the end has no end
+			The end has no end, the end has no end
+			The end has no end, the end has no end
+			</p><br/>
+			<img class="packageImg"src="images/roomonfire.jpg"/>
+			<button type="button" onclick ="openPurchaseWindow('package1')">Purchase</button>
+			<p>
+			I backed my car into a cop car the other day
+			Well, he just drove off, sometimes life's okay
+			I ran my mouth off a bit too much, oh, what did I say?
+			Well, you just laughed it off, it was all okay
+
+			And we'll all float on, okay
+			And we'll all float on, okay
+			And we'll all float on, okay
+			And we'll all float on anyway, well
+
+			A fake Jamaican took every last dime with that scam
+			It was worth it just to learn some sleight of hand
+			Bad news comes, don't you worry even when it lands
+			Good news will work its way to all them plans
+			We both got fired on exactly the same day
+			Well, we'll float on, good news is on the way
+
+			Bring it on, here we are, win or lose, win or lose
+			Win or lose, win or lose, win or lose, win or lose
+			Win or lose, win or lose, I can't say
+
+			And we'll all float on, okay
+			And we'll all float on, okay
+			And we'll all float on, okay
+			And we'll all float on, alright
+
+			Already, we'll all float on
+			No, don't you worry, we'll all float on, alright
+			Already, we'll all float on, alright
+			Don't worry, we'll all float on
+
+			(Alright, already) And we'll all float on
+			Alright, already, we'll all float on, alright
+			Don't worry, even if things end up a bit too heavy
+			We'll all float on
+			Alright, already, we'll all float on (I'm told don't function and listen everyday)
+			Alright, already, we'll all float on (The worlds' still going strong)
+			Okay, don't worry, we'll all float on (I lose hair)
+			Even if things get heavy, we'll all float on (while living here)
+			Alright, already, we'll all float on (Alright!) (float on)
+			Now don't you worry, we'll all float on (Alright!)
+			We'll all float on
+			</p><br/>
+			<img class="packageImg" src="images/goodnews.jpg"/>
+			<button type="button" onclick="openPurchaseWindow('package2')">Purchase</button>
 		</div>
 		
 		
