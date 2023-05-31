@@ -4,6 +4,16 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Purchase page</title>
+		<script>
+			function openPurchaseWindow(choice) {
+				if (choice == "package1") { 
+					window.open("https://en.wikipedia.org/wiki/Room_on_Fire", "_top", "fullscreen=yes");
+				}
+				if (choice == "package2") {
+					window.open("https://en.wikipedia.org/wiki/Good_News_for_People_Who_Love_Bad_News", "_top", "fullscreen=yes");
+				}
+			}
+		</script>
 		<link rel="stylesheet" href="styles.css"/>
 		<style>
 			nav {
@@ -28,16 +38,6 @@
 			.package-choice {
 			}
 		</style>
-		<script>
-			function openPurchaseWindow(choice) {
-				if choice == "package1" { 
-					window.open("https://en.wikipedia.org/wiki/Room_on_Fire", "_top", "fullscreen=yes");
-				}
-				if choice == "package2" {
-					window.open("https://en.wikipedia.org/wiki/Good_News_for_People_Who_Love_Bad_News", "_top", "fullscreen=yes");
-				}
-			}
-		</script>
 	</head>
 	<!---->
 	<body style="background-color: grey">
@@ -75,8 +75,8 @@
 			The end has no end, the end has no end
 			The end has no end, the end has no end
 			</p><br/>
-			<img class="packageImg"src="images/roomonfire.jpg"/>
-			<button type="button" onclick ="openPurchaseWindow('package1')">Purchase</button>
+			<img class="packageImg" src="images/roomonfire.jpg"/>
+			<button type="button" onclick="openPurchaseWindow('package1')">Purchase</button>
 			<p>
 			I backed my car into a cop car the other day
 			Well, he just drove off, sometimes life's okay
@@ -126,8 +126,9 @@
 		</div>
 		
 		
-	</body>
-	<footer>
+	
+		<footer>
 		
-	</footer>
+		</footer>
+	</body>
 </html>
