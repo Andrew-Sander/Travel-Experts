@@ -3,74 +3,67 @@
 <html>
 <!--Main Page: 1- welcome the customer to the site and 2- provide links and menus to the other pages ( +Contact Us +Vacation Package +Customer Registration)-->
 <head>
-  <title>Welcome to Travel-Experts</title>
-  <style>
-    <!-- This style has to be moved on an external CSS-File -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+	<title>Welcome to Travel-Experts</title>
+	<script>
+		//Set an array for images on main page
+		var mainImages		=	new Array();
+		mainImages			=	[
+									"images/package1.jpg",
+									"images/package2.jpg",
+									"images/package3.jpg"
+								];
+		//Set an array for description of each image on main page
+		var	mainDescriptions=	new Array();
+		mainDescriptions	=	[
+									"Picture 1 description.",
+									"Picture 2 description.",
+									"Picture 3 description."
+								];
+		
+		function increaseBrightness(index)
+			{
+				var thisImage=document.getElementById("img"+index);
+				thisImage.style.filter="brightness(140%)";
+			}
+		
+		function resetBrightness(index) 
+			{
+				var thisImage = document.getElementById("img"+index);
+				thisImage.style.filter = "brightness(100%)"; // Reset brightness to default
+			}
 
-    body 
-		{
-		  font-family: Arial, sans-serif;
-		  margin: 0;
-		  padding: 0;
-		}
-    
-    header 
-		{
-		  background-color: #333;
-		  color: #fff;
-		  padding: 20px;
-		  text-align: center;
-		}
-    
-    nav 
-		{
-		  text-align: center;
-		  margin-top: 20px;
-		}
-    
-    nav a 
-		{
-		  display: inline-block;
-		  margin: 0 10px;
-		  color: #333;
-		  text-decoration: none;
-		  font-weight: bold;
-		}
-    
-    section 
-		{
-		  text-align: center;
-		  margin: 50px auto;
-		}
-    
-    section img 
-		{
-		  width: 300px;
-		  height: 200px;
-		  margin: 10px;
-		}
-  </style>
+	</script>			
 </head>
-<body>
-  <header>
-  	<!--Need an image for LOGO-->
-    <h1>Welcome to Travel-Experts</h1>
-  </header>
+
+<body id="mainBody">
+<div class="mainContainer">
+	<header id="mainHeader">
+		<!--Need an image for LOGO-->
+		<h1>Welcome to Travel-Experts</h1>
+	</header>
   
-  <nav>
-    <a href="contact.html">Contact Us</a>
-    <a href="vacation.html">Vacation Package</a>
-    <a href="register.html">Customer Registration</a>
-  </nav>
+	<nav id="mainNav">
+		<a href="contact.html">Contact Us</a>
+		<a href="packages.html">Vacation Package</a>
+		<a href="register.html">Customer Registration</a>
+	</nav>
   
-  <section>
-    <img src="package1.jpg" alt="Package 1">
-    <img src="package2.jpg" alt="Package 2">
-    <img src="package3.jpg" alt="Package 3">
-  </section>
-  
+	<section id="mainSection">
+		<script>
+			for(var i=1;i<=mainImages.length;i++)
+				{
+					document.write("<img id='img"+i+"' src = '"+mainImages[i-1]+"' alt='Package "+i+"' onmouseover='increaseBrightness("+i+")' onmouseout='resetBrightness("+i+")' />");
+				}
+		</script>
+	</section>
+	<div><p id="dscrption"></p></div>
   	<footer>
+		<div><p>Copyright &copy; To Travel-Experts(TEAM5) Inc. 2023</p></div>
 	</footer>
-	
+</div>
 </body>
+
 </html>
