@@ -7,27 +7,59 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="styles.css">
 	<title>Welcome to Travel-Experts</title>
+	<script>
+		//Set an array for images on main page
+		var mainImages		=	new Array();
+		mainImages			=	[
+									"images/package1.jpg",
+									"images/package2.jpg",
+									"images/package3.jpg"
+								];
+		//Set an array for description of each image on main page
+		var	mainDescriptions=	new Array();
+		mainDescriptions	=	[
+									"Picture 1 description.",
+									"Picture 2 description.",
+									"Picture 3 description."
+								];
+		
+		function increaseBrightness(index)
+			{
+				var thisImage=document.getElementById("img"+index);
+				thisImage.style.filter="brightness(140%)";
+			}
+		
+		function resetBrightness(index) 
+			{
+				var thisImage = document.getElementById("img"+index);
+				thisImage.style.filter = "brightness(100%)"; // Reset brightness to default
+			}
+
+	</script>			
 </head>
 
 <body id="mainBody">
 <div class="mainContainer">
-  <header id="mainHeader">
-  	<!--Need an image for LOGO-->
-    <h1>Welcome to Travel-Experts</h1>
-  </header>
+	<header id="mainHeader">
+		<!--Need an image for LOGO-->
+		<h1>Welcome to Travel-Experts</h1>
+	</header>
   
-  <nav id="mainNav">
-    <a href="contact.html">Contact Us</a>
-    <a href="packages.html">Vacation Package</a>
-    <a href="register.html">Customer Registration</a>
-  </nav>
+	<nav id="mainNav">
+		<a href="contact.html">Contact Us</a>
+		<a href="packages.html">Vacation Package</a>
+		<a href="register.html">Customer Registration</a>
+	</nav>
   
-  <section id="mainSection">
-    <img src="images/package1.jpg" alt="Package 1">
-    <img src="images/package2.jpg" alt="Package 2">
-    <img src="images/package3.jpg" alt="Package 3">
-  </section>
-  
+	<section id="mainSection">
+		<script>
+			for(var i=1;i<=mainImages.length;i++)
+				{
+					document.write("<img id='img"+i+"' src = '"+mainImages[i-1]+"' alt='Package "+i+"' onmouseover='increaseBrightness("+i+")' onmouseout='resetBrightness("+i+")' />");
+				}
+		</script>
+	</section>
+	<div><p id="dscrption"></p></div>
   	<footer>
 		<div><p>Copyright &copy; To Travel-Experts(TEAM5) Inc. 2023</p></div>
 	</footer>
