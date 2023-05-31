@@ -26,7 +26,7 @@ a.registerLink {
     color: slategray;
 }
 a.registerLink:hover {
-    color: rgb(142, 236, 189);
+    color: rgb(142, 219, 236);
 }
 .registerHeader {
     /* position: sticky;
@@ -80,7 +80,7 @@ input.invalid {
     font: Arial;
     border: 1px solid white;
     border-radius: 5px;
-    background-color: rgb(142, 236, 189);
+    background-color: rgb(142, 219, 236);
     color: white;
 
 }

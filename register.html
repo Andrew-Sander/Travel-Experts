@@ -37,13 +37,13 @@
                     <input type="text" name="province" id="province" placeholder="province..." oninput="this.className = ''">
                     <input type="text" name="postal" id="postal" placeholder="postal code..." oninput="this.className = ''">
                 </div>
-                <div class="tab"><h4>Username & Password</h4>
-                    <input type="text" name="username" id="username" placeholder="username..." oninput="this.className = ''">
-                    <input type="password" name="password" id="password" placeholder="password..." oninput="this.className = ''">
+                <div class="tab" id="lastTab"><h4>Username & Password</h4>
+                    <input type="text" name="username" id="username" placeholder="username..." oninput="this.className = ''" autocomplete="doodoo">
+                    <input type="password" name="password" id="password" placeholder="password..." oninput="this.className = ''" autocomplete="doodoodoo">
                 </div>
                 <div style="overflow: auto;">
                     <div style="float: left;">
-                        <button type="button" id="clearBtn" onclick="clearForm()">Clear form</button>
+                        <button type="button" id="clearBtn" onclick="clearForm()">Clear</button>
                     </div>
                     <div style="float: right;">
                         <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
@@ -95,6 +95,7 @@
 
             if (currentTab >= myTabs.length) {
                 document.getElementById("registerForm").submit();
+                document.getElementById("lastTab").style.display = "block";
                 return false;
             }
 
@@ -118,13 +119,18 @@
             return valid;
         }
 
-        function clearForm () {
-            var confirmed = window.confirm("Are you sure you want to clear the form? This will clear all previous fields.");
+        function clearForm (n) {
+            
+            var myTabs = document.getElementsByClassName("tab");
+            var inputs = myTabs[currentTab].getElementsByTagName("input");
+            var i;
 
-            if (confirmed) {
-                document.getElementById("registerForm").reset();
-            } else {
+            var confirmed = window.confirm("Are you sure you want to clear the fields?");
 
+            for (i = 0; i<inputs.length; i++) {
+                if (confirmed) {
+                    inputs[i].value = '';
+                }
             }
         }
         // end registration form
