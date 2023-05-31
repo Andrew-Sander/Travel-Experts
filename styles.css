@@ -39,12 +39,13 @@
 	{
 		text-align: center;
 		margin: 50px auto;
+		filter: brightness(80%);
 	}
 
 #mainSection img 
 	{
-		width: 300px;
-		height: 200px;
+		width: 405px;
+		height: 250px;
 		margin: 10px;
 	}
 
