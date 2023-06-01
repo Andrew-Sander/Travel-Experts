@@ -178,9 +178,10 @@ background-image: url('images/clearWater.jpg');
 	height: 70%;
 	transform: translate(5%, 5%);
 	float: left;
-	overflow-y: scroll;
+	overflow-y: auto;
 	background-color: yellow;
 	margin: 0;
+
 }
 
 .packagesFooter {
@@ -190,9 +191,30 @@ background-image: url('images/clearWater.jpg');
 	top: 90%;
 }
 @media screen and (max-width: 600px) {
-  .packagesNav, .packagesMainContent {
-    width: 80%;
-	float: left;
-	transform: translate(10%, 10%);
+	.packagesNav, .packagesMainContent {
+		width: 80%;
+		float: left;
+		transform: translate(10%, 10%);
   }
+}
+
+/*End Packages page*/
+
+/* purchase window styles*/
+
+/*Heads up. I'm changing the <textarea> tag without selecting
+ a class because I don't think others will use it. */
+textarea {
+	resize: none;
+}
+#phoneDisclaimer {
+	width: 50%;
+}
+.customerForm {
+	width: 90%;
+	height: 90%;
+	position: absolute;
+	transform: translate(5%, 5%);
+	background-color: lightblue;
+	overflow: scroll;
 }
