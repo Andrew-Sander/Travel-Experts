@@ -16,16 +16,6 @@
 		</script>
 		<link rel="stylesheet" href="styles.css"/>
 		<style>
-			nav {
-				width: 30%;
-			}
-			#mainContent {
-				width: 70%;
-				height: 70%;
-				float: right;
-				background-color: #E2E2E2;
-				overflow-y: scroll;
-			}
 			table {
 				position: relative;
 				width:100%;
@@ -39,14 +29,33 @@
 			}
 		</style>
 	</head>
+	<!--Should we be worried about XML compatability? I forget the things he did in class to support XML.-->
+	
 	<!---->
-	<body style="background-color: grey">
-		<header style="background-color: white"><h1 class="title">Travel packages for sale</h1></header>
-		<nav></nav>
-		
+	<body class="packagesBody">
+		<!--same nav bar as on register.html-->
+		<header class="registerHeader">
+        <h2 class="title">Travel Experts</h2>
+        <ul class="navList">
+            <li class="navLink"><a class="registerLink" href="main.html">Home</a></li>
+            <li class="navLink"><a class="registerLink" href="packages.html">Packages</a></li>
+            <li class="navLink"><a class="registerLink" href="">Contact</a></li>
+            <li class="navLink"><a class="registerLink" href="register.html">Sign Up</a></li>
+        </ul>
+		</header>
+		<nav class="packagesNav">
+			<ul>
+				<li>import list with ejs</li>
+				<li>Test data1</li>
+				<li>Test data2</li>
+				<li>Test data3</li>
+				<li>Test data4</li>
+				<li>Test data5</li>
+			</ul>
+		</nav>
 		<!--Scroll box for travel package options-->
 		<!-- Currently the options are just song lyrics and album covers for testing, I'll change it to actual package options soon-->
-		<div id="mainContent">
+		<div class="packagesMainContent">
 			<p>
 			One by one, ticking time bombs won
 			It's not the secrets of the government
@@ -127,8 +136,8 @@
 		
 		
 	
-		<footer>
-		
+		<footer class="packagesFooter">
+			<p> hello this is the footer</p>
 		</footer>
 	</body>
 </html>

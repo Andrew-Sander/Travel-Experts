@@ -156,3 +156,43 @@ input.invalid {
     color: rgb(72, 83, 94);
 }
 /* End registration form */
+
+
+
+/* Packages.html Styles*/
+.packagesBody {
+background-color: grey; 
+background-image: url('images/clearWater.jpg');
+}
+.packagesMainContent {
+	width: 70%;
+	height: 70%;
+	float: right;
+	background-color: #E2E2E2;
+	overflow-y: scroll;
+	transform: translate(0%, 5%);
+}
+	
+.packagesNav {
+	width: 25%;
+	height: 70%;
+	transform: translate(5%, 5%);
+	float: left;
+	overflow-y: scroll;
+	background-color: yellow;
+	margin: 0;
+}
+
+.packagesFooter {
+	background-color: #E2E2E2;
+	width: 100%;
+	position: absolute;
+	top: 90%;
+}
+@media screen and (max-width: 600px) {
+  .packagesNav, .packagesMainContent {
+    width: 80%;
+	float: left;
+	transform: translate(10%, 10%);
+  }
+}
