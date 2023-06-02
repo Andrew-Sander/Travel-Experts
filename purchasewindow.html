@@ -38,6 +38,8 @@
 	<body>
 		<div class="customerFormDiv">
 		
+			<!--Might wanna put tool tips explaining what we're collecting the data for-->
+		
 			<h2>Shipping information</h2>
 			<!--I am unsure if I should be using two forms for Shipping and Billing info or one unified form with the headers and such inside-->
 			<form class="customerForm" action="">
@@ -64,8 +66,10 @@
 					<input type="text" id="custCity" name="custCity" value="City"></input><br/>
 					<label for="custPhone">Phone</label><br/>
 					<input type="text" id="custPhone" name="custPhone" value="Phone"></input><br/>
-					<p id="phoneDisclaimer">We will only use your phone number to contact you regarding your trip should any issues arise. 
-						It will not be distributed.</p>
+					<label for="custEmail">Email</label><br/>
+					<input type="text" id="custEmail" name="custEmail" value="Email"></input><br/>
+					<p id="phoneDisclaimer">We will only use your email and phone number to send your tickets and reciepts and/or contact you should any issues arise. 
+						Your contact information will not be distributed.</p>
 				</div>
 				<div id="billingAddress">
 					<h2>Billing Information</h2>
@@ -84,15 +88,22 @@
 					<label for="billingCountry">Country*</label><br/>
 					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="Country" disabled="true"></input><br/>
 					
-					<label for="custProvince">Province*</label><br/>
-					<input class="billingInput" type="text" id="custProvince" name="custProvince" value="Province" disabled="true"></input><br/>
-					<label for="custCity">City*</label><br/>
-					<input class="billingInput" type="text" id="custCity" name="custCity" value="City" disabled="true"></input><br/>
-					<label for="custPhone">Phone</label><br/>
-					<input class="billingInput" type="text" id="custPhone" name="custPhone" value="Phone" disabled="true"></input><br/>
-					<p id="phoneDisclaimer">We will only use your phone number to contact you regarding your trip should any issues arise. 
-						It will not be distributed.</p>
+					<label for="billingProvince">Province*</label><br/>
+					<input class="billingInput" type="text" id="billingProvince" name="billingProvince" value="Province" disabled="true"></input><br/>
+					<label for="billingCity">City*</label><br/>
+					<input class="billingInput" type="text" id="billingCity" name="billingCity" value="City" disabled="true"></input><br/>
 				</div>
+				<div id="paymentDetails">
+					<h2>Payment Details</h2>
+					<!--Add picture button selectors for MasterCard and Visa and maybe a third choice-->
+					<label for="cardNumber">Card Number*</label><br/>
+					<input type="text" id="cardNumber" name="cardNumber" value="---- ---- ---- ----" ></input><br/>
+					<label for="cardExpiration">Expiration Date*</label><br/>
+					<input type="text" id="cardExpiration" name="cardExpiration" value="mm/yy" ></input><br/>
+					<label for="cardCVV">CVV*</label><br/> <!--Would be cool to put little diagram of the card layout INSIDE the input box to the far right-->
+					<input type="text" id="cardCVV" name="cardCVV" value="---" ></input><br/>
+				</div>
+				<button type="submit">Proceed to Purchase</button>
 			</form>
 			
 		</div>
