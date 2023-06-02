@@ -17,51 +17,82 @@
 				 margin: 0;
 			}
 		</style>
+		<script>
+			function toggleBilling() {
+				myCheck = document.getElementById("sameAsShippingAddress");
+				myInputs = document.getElementsByClassName("billingInput")
+				if (myCheck.checked) {
+					for (i in myInputs) {
+						myInputs[i].disabled= true;
+					}
+				}
+				else {
+					for (i in myInputs) {
+						myInputs[i].disabled= false;
+					}
+				}
+			}	
+		</script>
 		
 	</head>
 	<body>
-		<div class="customerForm">
+		<div class="customerFormDiv">
 		
 			<h2>Shipping information</h2>
 			<!--I am unsure if I should be using two forms for Shipping and Billing info or one unified form with the headers and such inside-->
-			<form action="">
-				<label for="custFirstName">First name*</label>
-				<input type="text" id="custFirstName" name="custFirstName">First name</input><br/>
-				
-				<!--I figure most online stores don't keep track of middle names. Do travel companies keep track of that?-->
-				
-				<label for="custLastName">Last name*</label>
-				<input type="text" id="custLastName" name="custLastName">Last Name</input><br/>
-				<label for="custShippingAddress">Shipping Address*</label>
-				<textarea id="custShippingAddress" name="custShippingAddress">Shipping Address</textarea><br/>
-				<label for="custAptOrSuit">Apt. or suit (optional)</label>
-				<textarea id="custAptOrSuit" name="custAptOrSuit">Apt. or suit (optional)</textarea><br/>
-				<label for="custCountry">Country*</label>
-				<input type="text" id="custCountry" name="custCountry">Country</input><br/>
-				
-				<!--if we support multiple countries we'll need to change the input labels for province to states if US is selected-->
-				
-				<label for="custProvince">Province*</label>
-				<input type="text" id="custProvince" name="custProvince">Province</input><br/>
-				<label for="custCity">City*</label>
-				<input type="text" id="custCity" name="custCity">City</input><br/>
-				<label for="custPhone">Phone</label>
-				<input type="text" id="custPhone" name="custPhone">Phone</input><br/>
-				<p id="phoneDisclaimer">We will only use your phone number to contact you regarding your trip should any issues arise. 
-					It will not be distributed.</p>
-				
-				
-			</form>
-			<label for=
-			<input type="checkbox" name="sameAsShippingAddress"></input>
-			
-			<h2>Billing Information</h2>
-			<form>
-				<input type="text" name=""></input><br/>
-				<input type="text" name=""></input><br/>
-				<input type="text" name=""></input><br/>
-				<input type="text" name=""></input><br/>
-				<input type="text" name=""></input><br/>
+			<form class="customerForm" action="">
+				<div id="shippingAddress">
+					<label for="custFirstName">First name*</label><br/>
+					<input type="text" id="custFirstName" name="custFirstName" value="First name"></input><br/>
+					
+					<!--I figure most online stores don't keep track of middle names. Do travel companies keep track of that?-->
+					
+					<label for="custLastName">Last name*</label><br/>
+					<input type="text" id="custLastName" name="custLastName" value="Last Name"></input><br/>
+					<label for="custStreetAddress">Street Address*</label><br/>
+					<textarea id="custStreetAddress" name="custStreetAddress">Street Address</textarea><br/>
+					<label for="custAptOrSuit">Apt. or suit (optional)</label><br/>
+					<textarea id="custAptOrSuit" name="custAptOrSuit">Apt. or suit (optional)</textarea><br/>
+					<label for="custCountry">Country*</label><br/>
+					<input type="text" id="custCountry" name="custCountry" value="Country"></input><br/>
+					
+					<!--if we support multiple countries we'll need to change the input labels for province to states if US is selected-->
+					
+					<label for="custProvince">Province*</label><br/>
+					<input type="text" id="custProvince" name="custProvince" value="Province"></input><br/>
+					<label for="custCity">City*</label><br/>
+					<input type="text" id="custCity" name="custCity" value="City"></input><br/>
+					<label for="custPhone">Phone</label><br/>
+					<input type="text" id="custPhone" name="custPhone" value="Phone"></input><br/>
+					<p id="phoneDisclaimer">We will only use your phone number to contact you regarding your trip should any issues arise. 
+						It will not be distributed.</p>
+				</div>
+				<div id="billingAddress">
+					<h2>Billing Information</h2>
+					<label for="sameAsShippingAddress">Shipping Address is same as Billing Address</label>
+					<input type="checkbox" id="sameAsShippingAddress" name="sameAsShippingAddress" onClick="toggleBilling(this.value)" checked="checked"></input><br/><br/>
+					
+					<label for="billingFirstName">First name*</label><br/>
+					<input class="billingInput" type="text" id="billingFirstName" name="billingFirstName" value="First name" disabled="true"></input><br/>
+					<label for="billingLastName">Last name*</label><br/>
+					<input class="billingInput" type="text" id="billingLastName" name="billingLastName" value="Last Name" disabled="true"></input><br/>
+					
+					<label for="billingStreetAddress">Street Address*</label><br/>
+					<textarea class="billingInput" id="billingStreetAddress" name="billingStreetAddress" value="Street Address" disabled="true"></textarea><br/>
+					<label for="billingAptOrSuit">Apt. or suit (optional)</label><br/>
+					<textarea class="billingInput" id="billingAptOrSuit" name="billingAptOrSuit" value="Apt. or suit (optional)" disabled="true"></textarea><br/>
+					<label for="billingCountry">Country*</label><br/>
+					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="Country" disabled="true"></input><br/>
+					
+					<label for="custProvince">Province*</label><br/>
+					<input class="billingInput" type="text" id="custProvince" name="custProvince" value="Province" disabled="true"></input><br/>
+					<label for="custCity">City*</label><br/>
+					<input class="billingInput" type="text" id="custCity" name="custCity" value="City" disabled="true"></input><br/>
+					<label for="custPhone">Phone</label><br/>
+					<input class="billingInput" type="text" id="custPhone" name="custPhone" value="Phone" disabled="true"></input><br/>
+					<p id="phoneDisclaimer">We will only use your phone number to contact you regarding your trip should any issues arise. 
+						It will not be distributed.</p>
+				</div>
 			</form>
 			
 		</div>

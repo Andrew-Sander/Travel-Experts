@@ -172,7 +172,6 @@ background-image: url('images/clearWater.jpg');
 	overflow-y: scroll;
 	transform: translate(0%, 5%);
 }
-	
 .packagesNav {
 	width: 25%;
 	height: 70%;
@@ -183,7 +182,6 @@ background-image: url('images/clearWater.jpg');
 	margin: 0;
 
 }
-
 .packagesFooter {
 	background-color: #E2E2E2;
 	width: 100%;
@@ -208,13 +206,21 @@ textarea {
 	resize: none;
 }
 #phoneDisclaimer {
-	width: 50%;
+	/*width: 50%;  
+	---Old formatting ---
+	keeping it here just incase
+	*/
 }
-.customerForm {
+.customerFormDiv {
 	width: 90%;
 	height: 90%;
 	position: absolute;
 	transform: translate(5%, 5%);
 	background-color: lightblue;
-	overflow: scroll;
+	overflow-y: scroll;
+}
+.customerForm {
+	position: relative;
+	transform: translate(5%, 5%);
+	width: 40%;
 }
