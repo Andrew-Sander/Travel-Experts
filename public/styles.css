@@ -76,15 +76,30 @@
 		bottom: 0;
 	}
 	
+.notFoundBody {
+	margin: 0;
+    background-image: url("/images/beach-steps.jpg");
+}
+
+.notFoundMain {
+	max-width: 40%;
+	margin: 10px auto;
+	background-color: white;
+	border-radius: 8px;
+	padding: 5px;
+	margin-top: 20px;
+	text-align: center;
+}
+
 .regBody {
     margin: 0;
-    /* background-color: rgb(169, 203, 224); */
     background-image: url("/images/maldives.jpg");
     
 }
 
 /* register navbar */
 .title {
+	padding-left: 20px;
     display: inline-block;
     color: rgb(72, 83, 94);
 }
