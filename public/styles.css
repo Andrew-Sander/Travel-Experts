@@ -188,15 +188,25 @@ background-image: url('images/clearWater.jpg');
 	overflow-y: scroll;
 	transform: translate(0%, 5%);
 }
+.travelPackageImages {
+	/*aspect-ratio: 1;*/
+	height: 70%;
+	width: auto;
+	
+}
 .packagesNav {
 	width: 25%;
 	height: 70%;
 	transform: translate(5%, 5%);
 	float: left;
 	overflow-y: auto;
-	background-color: yellow;
+	background-color:  #FFFFFF;
 	margin: 0;
-
+}
+.packagesNav a{
+	text-decoration: none;
+	font-size: 26px;
+	color: rgb(72, 83, 94); /*Same as navBar Title*/
 }
 .packagesFooter {
 	background-color: #E2E2E2;
@@ -221,12 +231,7 @@ background-image: url('images/clearWater.jpg');
 textarea {
 	resize: none;
 }
-/* #phoneDisclaimer {
-	width: 50%;  
-	---Old formatting ---
-	keeping it here just incase
-	
-} */
+
 .customerFormDiv {
 	width: 90%;
 	height: 90%;
