@@ -203,15 +203,25 @@ background-image: url('images/clearWater.jpg');
 	overflow-y: scroll;
 	transform: translate(0%, 5%);
 }
+.travelPackageImages {
+	/*aspect-ratio: 1;*/
+	height: 70%;
+	width: auto;
+	
+}
 .packagesNav {
 	width: 25%;
 	height: 70%;
 	transform: translate(5%, 5%);
 	float: left;
 	overflow-y: auto;
-	background-color: yellow;
+	background-color:  #FFFFFF;
 	margin: 0;
-
+}
+.packagesNav a{
+	text-decoration: none;
+	font-size: 26px;
+	color: rgb(72, 83, 94); /*Same as navBar Title*/
 }
 .packagesFooter {
 	background-color: #E2E2E2;
@@ -236,12 +246,7 @@ background-image: url('images/clearWater.jpg');
 textarea {
 	resize: none;
 }
-/* #phoneDisclaimer {
-	width: 50%;  
-	---Old formatting ---
-	keeping it here just incase
-	
-} */
+
 .customerFormDiv {
 	width: 90%;
 	height: 90%;
@@ -255,3 +260,42 @@ textarea {
 	transform: translate(5%, 5%);
 	width: 40%;
 }
+
+/* contact.ejs style */
+#contactBody {
+	background-color: #333;
+	background-image: url("images/contactus.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: Arial, sans-serif;
+}
+
+#contactSlogon {
+	font-style: italic;
+	text-align: center;
+	width: 100%;
+	font-size: 100px;
+	color: red;
+}
+
+/* Contact sticky slide down sign */
+div.contactSlide {
+	text-align: center;
+	width: 300px;
+	height: 30px;
+	left: 40%;
+	position: fixed;
+	font-size: 20px;
+	top: 600px;
+	background-color: #333;
+}
+
+	div.contactSlide:before {
+		content: "\21F3";
+	}
+
+	div.contactSlide:after {
+		content: "\21F3";
+	}
+
+/* End of Contact*/

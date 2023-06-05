@@ -38,13 +38,29 @@
 	<body>
 		<%- include('../partials/header') %>
 		<div class="customerFormDiv">
-		
 			<!--Might wanna put tool tips explaining what we're collecting the data for-->
-		
-			<h2>Shipping information</h2>
+			
+			
 			<!--I am unsure if I should be using two forms for Shipping and Billing info or one unified form with the headers and such inside-->
 			<form class="customerForm" action="">
+				<div id="orderDetails">
+					<h2>Order information</h2>
+					<label for="needsFlight">Include flight:&nbsp;</label>
+					<input type="checkbox" id="needsFlight" name="needsFlight"></input><br/>
+					<label for="needsHotel">Book hotel(s) for me:&nbsp;</label>
+					<input type="checkbox" id="needsHotel" name="needsHotel"></input><br/>
+					<label for="needsCar">Rent a car:&nbsp;</label>
+					<input type="checkbox" id="needsCar" name="needsCar"></input><br/>
+					<label for="departureDate">Departure date*:&nbsp;</label>
+					<input type="date" id="departureDate" name="departureDate"></input><br/>
+					<label for="returnDate">Return date*:&nbsp;</label>
+					<input type="date" id="returnDate" name="returnDate"></input><br/>
+					<label for="numOfTravelers">Number of travelers:&nbsp;</label>
+					<input type="number" id="numOfTravelers" name="numOfTravelers" value="1"></input><br/>
+					
+				</div>
 				<div id="shippingAddress">
+					<h2>Shipping information</h2>
 					<label for="custFirstName">First name*</label><br/>
 					<input type="text" id="custFirstName" name="custFirstName" value="First name"></input><br/>
 					
@@ -54,8 +70,8 @@
 					<input type="text" id="custLastName" name="custLastName" value="Last Name"></input><br/>
 					<label for="custStreetAddress">Street Address*</label><br/>
 					<textarea id="custStreetAddress" name="custStreetAddress">Street Address</textarea><br/>
-					<label for="custAptOrSuit">Apt. or suit (optional)</label><br/>
-					<textarea id="custAptOrSuit" name="custAptOrSuit">Apt. or suit (optional)</textarea><br/>
+					<label for="custAptOrSuit">Apt. or suite (optional)</label><br/>
+					<textarea id="custAptOrSuit" name="custAptOrSuit">Apt. or suite (optional)</textarea><br/>
 					<label for="custCountry">Country*</label><br/>
 					<input type="text" id="custCountry" name="custCountry" value="Country"></input><br/>
 					
@@ -84,8 +100,8 @@
 					
 					<label for="billingStreetAddress">Street Address*</label><br/>
 					<textarea class="billingInput" id="billingStreetAddress" name="billingStreetAddress" value="Street Address" disabled="true"></textarea><br/>
-					<label for="billingAptOrSuit">Apt. or suit (optional)</label><br/>
-					<textarea class="billingInput" id="billingAptOrSuit" name="billingAptOrSuit" value="Apt. or suit (optional)" disabled="true"></textarea><br/>
+					<label for="billingAptOrSuit">Apt. or suite (optional)</label><br/>
+					<textarea class="billingInput" id="billingAptOrSuit" name="billingAptOrSuit" value="Apt. or suite (optional)" disabled="true"></textarea><br/>
 					<label for="billingCountry">Country*</label><br/>
 					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="Country" disabled="true"></input><br/>
 					
