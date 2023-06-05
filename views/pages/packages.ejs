@@ -12,10 +12,10 @@
 				if (choice == "package2") {
 					window.open("https://en.wikipedia.org/wiki/Good_News_for_People_Who_Love_Bad_News", "", "_top", "fullscreen=yes");
 				}*/
-				window.open("./purchasewindow.html");
+				window.open("/purchasewindow");
 			}
 		</script>
-		<link rel="stylesheet" href="styles.css"/>
+		<link rel="stylesheet" href="/styles.css"/>
 		<style>
 			table {
 				position: relative;
@@ -28,8 +28,8 @@
 				 width: 100%; 
 				 margin: 0;
 			}
-			.package-choice {
-			}
+			/* .package-choice {
+			} */
 		</style>
 	</head>
 	<!--Should we be worried about XML compatability? I forget the things he did in class to support XML.-->
@@ -37,15 +37,7 @@
 	<!---->
 	<body class="packagesBody">
 		<!--same nav bar as on register.html-->
-		<header class="registerHeader">
-        <h2 class="title">Travel Experts</h2>
-        <ul class="navList">
-            <li class="navLink"><a class="registerLink" href="main.html">Home</a></li>
-            <li class="navLink"><a class="registerLink" href="packages.html">Packages</a></li>
-            <li class="navLink"><a class="registerLink" href="">Contact</a></li>
-            <li class="navLink"><a class="registerLink" href="register.html">Sign Up</a></li>
-        </ul>
-		</header>
+		<%- include('../partials/header') %>
 		<nav class="packagesNav">
 			<ul>
 				<li>import list with ejs</li>

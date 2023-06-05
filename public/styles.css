@@ -79,7 +79,7 @@
 .regBody {
     margin: 0;
     /* background-color: rgb(169, 203, 224); */
-    background-image: url("images/maldives.jpg");
+    background-image: url("/images/maldives.jpg");
     
 }
 
@@ -221,12 +221,12 @@ background-image: url('images/clearWater.jpg');
 textarea {
 	resize: none;
 }
-#phoneDisclaimer {
-	/*width: 50%;  
+/* #phoneDisclaimer {
+	width: 50%;  
 	---Old formatting ---
 	keeping it here just incase
-	*/
-}
+	
+} */
 .customerFormDiv {
 	width: 90%;
 	height: 90%;
