@@ -1,0 +1,120 @@
+<!--Howard Song-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Travel-Expert</title>
+        <style>
+            body {
+                background-color: #333;
+                background-image: url("images/contactus.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                font-family: Arial, sans-serif;
+            }
+
+            #slogon {
+                font-style: italic;
+                text-align: center;
+                width: 100%;
+                font-size: 100px;
+                color: red;
+            }
+            /*Sticky slide down sign */
+            div.slide {
+                text-align: center;
+                width: 300px;
+                height: 30px;
+                left: 40%;
+                position: fixed;
+                font-size: 20px;
+                top: 600px;
+                background-color: #333;
+            }
+            div.slide:before {
+                content: "\21F3";
+            }
+            div.slide:after {
+                content: "\21F3";
+            }
+            /*link to other pages*/
+            ul {
+                list-style-type: none;
+                padding: 0px;
+                margin: 0px;
+                overflow: hidden;
+            }
+            li {
+                float: left;
+            }
+            a:link, a:visited {
+                display: block;
+                font-weight: bold;
+                color: white;
+                background-color: skyblue;
+                width: 359px;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                text-transform: uppercase;
+            }
+            a:hover {
+                background-color: red
+            }
+            /*contact info*/
+            div.info {
+                position: absolute;
+                top: 950px;
+                text-align: center;
+                background-color: #333;
+                color: #fff;
+                padding: 20px;
+                width: 100%;
+            }
+            p {
+                font-weight:bold;
+            }
+            footer {
+                position: absolute;
+                top: 1300px;
+                width: 100%;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="slogon">To Far and Beyond</h1>
+        <div class="slide">slide down for contact info</div><br />
+        <div class="info">
+        <nav>
+			<ul>
+				<li ><a href="main.html">Home</a></li>
+				<li><a href="packages.html">Package</a></li>
+				<li><a href="register.html">Sign Up</a></li>
+				<li><a href="http://sait.ca">Career</a></li>
+			</ul>
+		</nav>
+            <h2>Travel-Experts.ltd</h2><br />
+            <p>Phone: 1(403)222-2222</p><br />
+            <p>Email: travelexperts@bussiness.com</p><br />
+            <p>Location: 1301 16 Ave NW, Calgary AB T2M 0L4</p><br />
+        </div><br />
+        <footer>
+            <p>This page is copyrighted &copy; by Travel Expert.ltd 2023</p>
+        </footer>
+        <script>
+            document.onscroll = function () {
+                if (window.innerHeight + window.scrollY > document.body.clientHeight) {
+                    document.getElementById('slide').style.display = 'none';
+                }
+                else {
+                    document.getElementById('slide').style.display = 'block';
+                }
+            }
+        </script>
+
+    </body>
+
+        
+</html >
