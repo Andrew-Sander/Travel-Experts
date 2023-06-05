@@ -6,38 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Travel-Expert</title>
         <style>
-            body {
-                background-color: #333;
-                background-image: url("images/contactus.jpg");
-                background-repeat: no-repeat;
-                background-size: cover;
-                font-family: Arial, sans-serif;
-            }
-
-            #slogon {
-                font-style: italic;
-                text-align: center;
-                width: 100%;
-                font-size: 100px;
-                color: red;
-            }
-            /*Sticky slide down sign */
-            div.slide {
-                text-align: center;
-                width: 300px;
-                height: 30px;
-                left: 40%;
-                position: fixed;
-                font-size: 20px;
-                top: 600px;
-                background-color: #333;
-            }
-            div.slide:before {
-                content: "\21F3";
-            }
-            div.slide:after {
-                content: "\21F3";
-            }
+			<link rel="stylesheet" href="/styles.css"/>
             /*link to other pages*/
             ul {
                 list-style-type: none;
@@ -83,9 +52,9 @@
             }
         </style>
     </head>
-    <body>
-        <h1 id="slogon">To Far and Beyond</h1>
-        <div class="slide">slide down for contact info</div><br />
+    <body id=contactBody>
+        <h1 id="contactSlogon">To Far and Beyond</h1>
+        <div class="contactSlide">slide down for contact info</div><br />
         <div class="info">
         <nav>
 			<ul>
