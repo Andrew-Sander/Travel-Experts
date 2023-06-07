@@ -13,25 +13,11 @@
     <main>
         <div id="registerContainer">
             <!-- Registration form (multi-step) -->
-            <form action="/register" method="post" id="registerForm">
-                <h2>Create an Account</h2>
-                <div class="tab"><h4>Name</h4>
-                    <input type="text" name="fname" id="fname" placeholder="first name..." oninput="this.className = ''">
-                    <input type="text" name="lname" id="lname" placeholder="last name..." oninput="this.className = ''">
-                </div>
-                <div class="tab"><h4>Contact</h4>
-                    <input type="text" name="phone" id="phone" placeholder="phone number..." oninput="this.className = ''">
-                    <input type="text" name="email" id="email" placeholder="email address..." oninput="this.className = ''">
-                </div>
-                <div class="tab"><h4>Address</h4>
-                    <input type="text" name="address" id="address" placeholder="street address..." oninput="this.className = ''">
-                    <input type="text" name="city" id="city" placeholder="city..." oninput="this.className = ''">
-                    <input type="text" name="province" id="province" placeholder="province..." oninput="this.className = ''">
-                    <input type="text" name="postal" id="postal" placeholder="postal code..." oninput="this.className = ''">
-                </div>
-                <div class="tab" id="lastTab"><h4>Username & Password</h4>
-                    <input type="text" name="username" id="username" placeholder="username..." oninput="this.className = ''" autocomplete="doodoo">
-                    <input type="password" name="password" id="password" placeholder="password..." oninput="this.className = ''" autocomplete="doodoodoo">
+            <form action="/login" method="post" id="registerForm">
+                <h2>Log in</h2>
+                <div class="tab">
+                    <input type="text" name="username" id="username" placeholder="username..." oninput="this.className = ''">
+                    <input type="password" name="password" id="password" placeholder="password..." oninput="this.className = ''">
                 </div>
                 <div style="overflow: auto;">
                     <div style="float: left;">
@@ -45,7 +31,7 @@
                 <div style="width: 70%; max-width: 400px; text-align: center; margin: 0 auto;">
                     <div id="createAccount">
                         <div id="createAccountDiv">
-                            <p style="margin-top: 0; padding-top: 40px; font-size: 12pt;">Already have an account?<br><a class="registerLink" href="/login">Sign in</a></p>
+                            <p style="margin-top: 0; padding-top: 40px; font-size: 12pt;">Don't have an account?<br><a class="registerLink" href="/register">Create one</a></p>
                         </div>
                     </div>            
                 </div>
@@ -56,7 +42,7 @@
         
     </footer>
     <script>
-        // multi-step registration form
+        // multi-step login form (one step here but still works fine)
         var currentTab = 0;
         showTab(currentTab);
 
@@ -125,7 +111,7 @@
                 }
             }
         }
-        // end registration form
+        // end login form
     </script>
 </body>
 </html>
