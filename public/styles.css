@@ -36,21 +36,6 @@
 
 	}
 
-#mainNav 
-	{
-		text-align: center;
-		margin-top: 20px;
-	}
-
-#mainNav a 
-	{
-		display: inline-block;
-		margin: 0 10px;
-		color: #333;
-		text-decoration: none;
-		font-weight: bold;
-	}
-
 #mainSection 
 	{
 		text-align: center;
