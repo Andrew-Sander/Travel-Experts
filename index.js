@@ -3,8 +3,6 @@ const app = express();
 const path = require('path');
 const mysql = require ('mysql');
 const session = require('express-session');
-const mysql = require ('mysql');
-const session = require('express-session');
 
 app.set('view engine', 'ejs');
 
