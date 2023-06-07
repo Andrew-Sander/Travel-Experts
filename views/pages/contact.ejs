@@ -7,7 +7,8 @@
         <title>Travel-Expert</title>
         <style>
 			<link rel="stylesheet" href="/styles.css"/>
-            /*link to other pages*/
+            <!--link to other pages-->
+			
             ul {
                 list-style-type: none;
                 padding: 0px;
@@ -17,17 +18,19 @@
             li {
                 float: left;
             }
-            a:link, a:visited {
-                display: block;
-                font-weight: bold;
-                color: white;
-                background-color: skyblue;
-                width: 359px;
-                text-align: center;
-                padding: 10px;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
+			a:link,
+			a:visited {
+				display: block;
+				font-weight: bold;
+				color: white;
+				background-color: skyblue;
+				width: 340px;
+				text-align: center;
+				padding: 10px;
+				text-decoration: none;
+				text-transform: uppercase;
+			}
+
             a:hover {
                 background-color: red
             }
@@ -46,26 +49,36 @@
             }
             footer {
                 position: absolute;
-                top: 1300px;
+                top: 1350px;
                 width: 100%;
                 text-align: center;
             }
+			.contactRed {
+				color:red;
+			}
         </style>
     </head>
-    <body id=contactBody>
-        <h1 id="contactSlogon">To Far and Beyond</h1>
+    <body class="contactBody">
+        <h1 class="contactSlogon">To Far and Beyond</h1>
         <div class="contactSlide">slide down for contact info</div><br />
         <div class="info">
         <nav>
 			<ul>
-				<li ><a href="main.html">Home</a></li>
-				<li><a href="packages.html">Package</a></li>
-				<li><a href="register.html">Sign Up</a></li>
-				<li><a href="http://sait.ca">Career</a></li>
+				<li><a href="/">Home</a></li>
+				<li><a href="packages">Package</a></li>
+				<li><a href="register">Sign Up</a></li>
+				<li><a href="register">Career</a></li>
 			</ul>
-		</nav>
+		</nav><br />
             <h2>Travel-Experts.ltd</h2><br />
-            <p>Phone: 1(403)222-2222</p><br />
+            <p>Business Phone: 1(403)222-2222</p><br />
+            <p class="contactRed">Contact Our Superstar travel agents!!!</p>
+			<select id="select" onchange="onChange()">
+				<% result.forEach(function(agent, i) { %>
+					<option value="<%= i %>"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></option>
+				<% }); %>
+			</select>
+            <p id="label"></p>
             <p>Email: travelexperts@bussiness.com</p><br />
             <p>Location: 1301 16 Ave NW, Calgary AB T2M 0L4</p><br />
         </div><br />
@@ -73,17 +86,37 @@
             <p>This page is copyrighted &copy; by Travel Expert.ltd 2023</p>
         </footer>
         <script>
-            document.onscroll = function () {
+			function onChange() {
+				var select = document.getElementById("select");
+				var index = select.value;
+				var agent = result[index];
+				document.getElementById("label").innerHTML = agent.AgtBusPhone + " " + agent.AgtEmail;
+			}
+
+            /*document.onscroll = function () {
                 if (window.innerHeight + window.scrollY > document.body.clientHeight) {
-                    document.getElementById('slide').style.display = 'none';
+                    document.getElementsByClassName('contactSlide').style.display = 'none';
                 }
                 else {
-                    document.getElementById('slide').style.display = 'block';
+                    document.getElementsByClassName('contactSlide').style.display = 'block';
                 }
-            }
+            }*/
+			
+			document.onscroll = function () {
+				if (window.innerHeight + window.scrollY > document.body.clientHeight) {
+					var contactSlides = document.getElementsByClassName('contactSlide');
+					for (var i = 0; i < contactSlides.length; i++) {
+						contactSlides[i].style.display = 'none';
+					}
+				}
+				else {
+					var contactSlides = document.getElementsByClassName('contactSlide');
+					for (var i = 0; i < contactSlides.length; i++) {
+						contactSlides[i].style.display = 'block';
+					}
+				}
+			};
+
         </script>
-
-    </body>
-
-        
+    </body> 
 </html >

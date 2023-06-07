@@ -262,15 +262,15 @@ textarea {
 }
 
 /* contact.ejs style */
-#contactBody {
+body.contactBody {
+	background-image: url(images/contactus.jpg);
 	background-color: #333;
-	background-image: url("images/contactus.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: Arial, sans-serif;
 }
 
-#contactSlogon {
+.contactSlogon {
 	font-style: italic;
 	text-align: center;
 	width: 100%;
@@ -290,12 +290,12 @@ div.contactSlide {
 	background-color: #333;
 }
 
-	div.contactSlide:before {
-		content: "\21F3";
-	}
+div.contactSlide:before {
+	content: "\21F3";
+}
 
-	div.contactSlide:after {
-		content: "\21F3";
-	}
+div.contactSlide:after {
+	content: "\21F3";
+}
 
 /* End of Contact*/
