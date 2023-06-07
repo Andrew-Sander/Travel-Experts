@@ -46,6 +46,8 @@
 </head>
 
 <body id="mainBody">
+<%- include('../partials/header') %>
+
 <div class="mainContainer">
 		<header>
 			<section id="mainHeaderDiv">
@@ -55,45 +57,15 @@
 			</section>
 		</header>
 
-	<nav id="mainNav">
-		<a href="contact">Contact Us</a>
-		<a href="packages">Vacation Package</a>
-		<a href="register">Customer Registration</a>
-		<a href="#" onclick="showPopup()">About Us</a>
-		
-	</nav>
+		<%- include('../partials/about') %>
 
-<!-- Pop-up description -->
-	<div id="popupDescription" class="popup" style="display: none;">
-		<h2>About Us</h2>
-		<p>Welcome to our website! This is Team 5 and we are proud to present the first sample of our educational project. Our mission is to provide valuable information, resources, and services to our users.
-At our website, we strive to create a user-friendly and interactive platform that caters to the needs of our audience. We understand the importance of education and aim to support and enhance the learning experience for our visitors.
-Through our website, you will find a wide range of educational materials, including informative articles, tutorials, and engaging multimedia content. We cover various subjects and topics, ensuring that there is something for everyone.
-Our team of dedicated educators and experts work tirelessly to deliver accurate and up-to-date information. We believe in the power of knowledge and its ability to empower individuals, and we are committed to promoting lifelong learning.
-We value your feedback and suggestions, as they help us improve and tailor our content to better serve your needs. We encourage you to explore our website, take advantage of the resources available, and join our vibrant community of learners.
-Thank you for visiting our website. We hope you find it valuable and engaging. Together, let's embark on an exciting educational journey!
 
-- The Team at [Your Website Name]</p>
-		<button onclick="hidePopup()">Close</button>
-	</div>
-	
 	<section id="mainSection">
 		<script>
 			for(var i=1;i<=mainImages.length;i++)
 				{
 					document.write("<img id='img"+i+"' src = '"+mainImages[i-1]+"' alt='Package "+i+"' onmouseover='increaseBrightness("+i+")' onmouseout='resetBrightness("+i+")' />");
 				}
-			function showPopup() 
-			{
-				var popup = document.getElementById("popupDescription");
-				popup.style.display = "block";
-			}
-
-			function hidePopup() 
-			{
-				 var popup = document.getElementById("popupDescription");
-				 popup.style.display = "none";
-			}
 		</script>
 	</section>
 	<div><p id="dscrption"></p></div>
