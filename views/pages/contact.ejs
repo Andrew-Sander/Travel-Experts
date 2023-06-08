@@ -5,6 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <title>Travel-Expert</title>
         <style>	
             p {
@@ -23,7 +24,9 @@
         </style>
     </head>
     <body class="contactBody">
-        <%- include('../partials/header') %>
+        <div class="w3-container">
+            <%- include('../partials/header') %>
+        </div>
         <div class="contactSlide">slide down for contact info</div><br />
             <h2>Travel-Experts.ltd</h2><br />
             <p>Business Phone: 1(403)222-2222</p><br />
@@ -38,7 +41,7 @@
             <p>Location: 1301 16 Ave NW, Calgary AB T2M 0L4</p><br />
         </div><br />
         <footer>
-            <p>This page is copyrighted &copy; by Travel Expert.ltd 2023</p>
+            <p>Copyright &copy; To Travel-Experts(TEAM 5) Inc. 2023</p>
         </footer>
         <script>
 			function onChange() {
@@ -48,16 +51,16 @@
 				document.getElementById("label").innerHTML = agent.AgtBusPhone + " " + agent.AgtEmail;
 			}
 
-            /*document.onscroll = function () {
+            document.onscroll = function () {
                 if (window.innerHeight + window.scrollY > document.body.clientHeight) {
                     document.getElementsByClassName('contactSlide').style.display = 'none';
                 }
                 else {
                     document.getElementsByClassName('contactSlide').style.display = 'block';
                 }
-            }*/
+            }
 			
-			document.onscroll = function () {
+			/*document.onscroll = function () {
 				if (window.innerHeight + window.scrollY > document.body.clientHeight) {
 					var contactSlides = document.getElementsByClassName('contactSlide');
 					for (var i = 0; i < contactSlides.length; i++) {
@@ -70,7 +73,7 @@
 						contactSlides[i].style.display = 'block';
 					}
 				}
-			};
+			};*/
 
         </script>
     </body> 
