@@ -5,46 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Purchase page</title>
 		<script>
-			const packageInfo new Array();
-			packageInfo[0] = {description: "Start your new year strong with the <%= packages[0].PkgName%> Package. On this trip you'll find yourself enjoying
-				beaches of [CITY NAME]", imgSrcPath: "./public/images/imgset/newyork.jpg"};
-			packageInfo[1] = {description: "New York City: Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text.",
-					imgSrcPath: "./public/images/imgset/larchdetriomphe.jpg"};
-			packageInfo[2] = {description: "Sample City: Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text.", imgSrcPath: "./public/images/imgset/sweden.JPG"};
-			packageInfo[3] = {description: "New York City: Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text.", imgSrcPath: "./public/images/imgset/sculpture.jpg"};
-			packageInfo[4] = {description: "New York City: Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
-					+ "Sample text. Sample text.", imgSrcPath: "./public/images/imgset/tower.jpg"};
-			
 			function openPurchaseWindow(choice) {
-				/*if (choice == "package1") { 
-					window.open("https://en.wikipedia.org/wiki/Room_on_Fire", "", "_top", "fullscreen=yes");
-				}
-				if (choice == "package2") {
-					window.open("https://en.wikipedia.org/wiki/Good_News_for_People_Who_Love_Bad_News", "", "_top", "fullscreen=yes");
-				}*/
 				window.open("/purchasewindow");
 			}
 		</script>
@@ -81,94 +42,95 @@
 				<% }); %>
 			</ul>
 		</nav>
+		<!--Rounded corners for main content-->
+		<div id="mainContentBorder">
 		<!--Scroll box for travel package options-->
-		<!-- Currently the options are just song lyrics and album covers for testing, I'll change it to actual package options soon-->
-		<div class="packagesMainContent">
-			<p id="para0">
-	
-				<%= packages[0].PkgName%><br/>
-				
-				Start your new year strong with the <%= packages[0].PkgName%> Package. On this trip you'll find yourself enjoying
-				beaches of [CITY NAME] 
-			</p><br/>
-			<img class="travelPackageImages" src="./images/maldives.jpg"/>
-			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
-			<!-- Template for purchase options. -- Maybe use ejs to put this in an external function and then iterate to create the list?
-			
-			<p id="data#">		I used non descriptive id names so that a for loop could automatically make new data.
-			
-			</p><br/>
-			<img/>
-			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
-			-->
-			
-			<!----------------->
-			
-			<p class="paragraphTest" id="para1">
-				New York City: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-			</p><br/>
-			<img class="travelPackageImages" src="./images/imgset/newyork.jpg"/>
-			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package1')">Purchase</button><br/>
-			
-			<!--Why does the public folder not need to be mentioned?-->
-			<!----------------->
-			
-			<p class="paragraphTest" id="para2">
-				Paris, France: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-			</p><br/>
-			<img class="travelPackageImages" src="./images/imgset/larchdetriomphe.jpg"/> 
-			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
-			
-			<!----------------->
-			
-			<p class="paragraphTest" id="para3">
-				Location Name: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-			</p><br/>
-			<img class="travelPackageImages" src="./images/imgset/sweden.JPG"/>
-			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package3')">Purchase</button><br/>
-			
-			<!----------------->
-			
-			<p id="data4">
-				Location Name: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-			</p><br/>
-			<img class="travelPackageImages" src="./images/imgset/sculpture.jpg"/>
-			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package4')">Purchase</button><br/>
-			
-			<!----------------->
-			
-			<p id="data5">
-				Location Name: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
-			</p><br/>
-			<img class="travelPackageImages" src="./images/imgset/tower.jpg"/>
-			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package5')">Purchase</button><br/>
-			</div>
+			<div class="packagesMainContent">
+				<p id="para0">
 		
+					<%= packages[0].PkgName%><br/>
+					
+					Start your new year strong with the <%= packages[0].PkgName%> Package. On this trip you'll find yourself enjoying
+					beaches of [CITY NAME] 
+				</p><br/>
+				<img class="travelPackageImages" src="./images/maldives.jpg"/>
+				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
+				<!-- Template for purchase options. -- Maybe use ejs to put this in an external function and then iterate to create the list?
+				
+				<p id="data#">		I used non descriptive id names so that a for loop could automatically make new data.
+				
+				</p><br/>
+				<img/>
+				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
+				-->
+				
+				<!----------------->
+				
+				<p class="paragraphTest" id="para1">
+					New York City: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+				</p><br/>
+				<img class="travelPackageImages" src="./images/imgset/newyork.jpg"/>
+				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package1')">Purchase</button><br/>
+				
+				<!--Why does the public folder not need to be mentioned?-->
+				<!----------------->
+				
+				<p class="paragraphTest" id="para2">
+					Paris, France: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+				</p><br/>
+				<img class="travelPackageImages" src="./images/imgset/larchdetriomphe.jpg"/> 
+				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
+				
+				<!----------------->
+				
+				<p class="paragraphTest" id="para3">
+					Location Name: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+				</p><br/>
+				<img class="travelPackageImages" src="./images/imgset/sweden.JPG"/>
+				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package3')">Purchase</button><br/>
+				
+				<!----------------->
+				
+				<p id="data4">
+					Location Name: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+				</p><br/>
+				<img class="travelPackageImages" src="./images/imgset/sculpture.jpg"/>
+				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package4')">Purchase</button><br/>
+				
+				<!----------------->
+				
+				<p id="data5">
+					Location Name: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+					Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
+				</p><br/>
+				<img class="travelPackageImages" src="./images/imgset/tower.jpg"/>
+				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package5')">Purchase</button><br/>
+			</div>
+		</div>
 		
 	
 		<footer class="packagesFooter">

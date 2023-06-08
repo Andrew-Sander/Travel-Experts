@@ -13,7 +13,7 @@ app.listen(3000, (err) => {
 function getDBH() {
     return mysql.createConnection({
         host: "localhost",
-        user: "HowardS",
+        user: "fred",
         password: "Password",
         database: "travelexperts"
     });
@@ -29,8 +29,45 @@ app.get('/', (req, res) => {
     res.render('pages/main');
 });
 
+<<<<<<< Updated upstream
 
 
+=======
+app.get('/packages', (req, res) => {
+	var dbh = mysql.createConnection( {
+			host: "localhost",
+			user: "fred",
+			password: "Password",
+			database: "travelexperts"
+		} );
+	dbh.connect((err) => {
+		if (err) throw err;
+		var sql = "SELECT * FROM packages";
+		dbh.query(sql, (err, result, fields) => {
+			if (err) throw err;
+			res.render('pages/packages' , {
+				packages: result
+			} );
+		} );
+	} );
+});
+app.get('/purchasewindow', (req, res) => {
+	var dbh = mysql.createConnection( {
+			host: "localhost",
+			user: "fred",
+			password: "Password",
+			database: "travelexperts"
+		} );
+	var sql = "SELECT PkgName FROM packages WHERE PackageId=?"
+	dbh.query({"sql": sql, "values": [req.params.id]}, (err, result) => {
+		if (err) throw err;
+		console.log('got purchasewindow');
+		res.render('pages/purchasewindow' , {
+			cart: result
+		} );
+	} );
+} );
+>>>>>>> Stashed changes
 app.get('/purchasewindow', (req, res) => {
     res.render('pages/purchasewindow');
 });
