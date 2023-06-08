@@ -301,5 +301,24 @@ div.contactSlide:after {
 	content: "\21F3";
 }
 
+div.contactInfo {
+	line-height: 0.5;
+	background-color:#E2E2E2;
+	text-align: center;
+	left: 36%;
+	position: absolute;
+	font-size: 20px;
+	top: 250px;
+	border-radius: 8px;
+	background-size: 100px 100px
+}
+
+div.contactSelect {
+	text-align: center;
+	left: 36%;
+	position: absolute;
+	font-size: 20px;
+	top: 1500px;
+}
 
 /* End of Contact*/
