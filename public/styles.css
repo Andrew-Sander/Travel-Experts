@@ -262,6 +262,7 @@ textarea {
 
 /* contact.ejs style */
 body.contactBody {
+	background-image: url("images/contactus.jpg");
 	background-color: #333;
 	background-repeat: no-repeat;
 	background-size: cover;
