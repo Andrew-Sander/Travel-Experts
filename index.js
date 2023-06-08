@@ -69,7 +69,6 @@ app.get("/contact", (req, res) => {
         var sql = "select AgtFirstName, AgtLastName, AgtBusPhone, AgtEmail from agents";
         dbh.query({ "sql": sql, "values": [req.params.id] }, (err, result) => {
             if (err) throw err;
-            console.log(result)
             res.render('pages/contact', { "result": result });
             dbh.end((err) => {
                 if (err) throw err;

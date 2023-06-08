@@ -13,7 +13,7 @@
             }
             footer {
                 position: absolute;
-                top: 1450px;
+                top: 1250px;
                 width: 100%;
                 text-align: center;
             }
@@ -33,22 +33,21 @@
         </div><br />
         <div class="contactSelect">
         <p class="contactRed">Contact Our Superstar travel agents!!!</p>
-            <select id="select" onchange="onChange()">
+            <select id="select" onchange="onChange(this.value)">
                 <% result.forEach(function(agent, i) { %>
-                    <option value="<%= i %>"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></option>
+                    <option value="<%= agent.AgtBusPhone%> <%= agent.AgtEmail %>"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></option>
                 <% }); %>
-                <p id="label"></p>
             </select>
+            <p id="label">Default Text</p>
         </div>
         <footer>
             <p>Copyright &copy; To Travel-Experts(TEAM 5) Inc. 2023</p>
         </footer>
         <script>
 			function onChange() {
-				var select = document.getElementById("select");
-				var index = select.value;
-				var agent = result[index];
-				document.getElementById("label").innerHTML = agent.AgtBusPhone + " " + agent.AgtEmail;
+				var x = document.getElementById("select").selectedIndex;
+                var info = document.getElementsByTagName("option")[x].value;
+				document.getElementById("label").innerHTML = info  ;
 			}
             
             document.onscroll = function () {
