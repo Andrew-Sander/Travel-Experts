@@ -67,7 +67,6 @@ app.get('/purchasewindow', (req, res) => {
 		} );
 	} );
 } );
->>>>>>> Stashed changes
 app.get('/purchasewindow', (req, res) => {
     res.render('pages/purchasewindow');
 });
