@@ -22,8 +22,8 @@
         </style>
     </head>
     <body class="contactBody">
-        <%- include('../partials/header') %>
-        <h1 class="contactSlogon">To Far and Beyond</h1>
+        <%- include('../partials/header') %> 
+        <image src="images/contactus.jpg" id="contactImg" /image>
         <div class="contactSlide">slide down for contact info</div><br />
             <h2>Travel-Experts.ltd</h2><br />
             <p>Business Phone: 1(403)222-2222</p><br />
@@ -48,16 +48,16 @@
 				document.getElementById("label").innerHTML = agent.AgtBusPhone + " " + agent.AgtEmail;
 			}
 
-            /*document.onscroll = function () {
+            document.onscroll = function () {
                 if (window.innerHeight + window.scrollY > document.body.clientHeight) {
                     document.getElementsByClassName('contactSlide').style.display = 'none';
                 }
                 else {
                     document.getElementsByClassName('contactSlide').style.display = 'block';
                 }
-            }*/
+            }
 			
-			document.onscroll = function () {
+			/*document.onscroll = function () {
 				if (window.innerHeight + window.scrollY > document.body.clientHeight) {
 					var contactSlides = document.getElementsByClassName('contactSlide');
 					for (var i = 0; i < contactSlides.length; i++) {
@@ -70,7 +70,7 @@
 						contactSlides[i].style.display = 'block';
 					}
 				}
-			};
+			};*/
 
         </script>
     </body> 

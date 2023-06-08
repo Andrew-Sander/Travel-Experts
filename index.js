@@ -29,25 +29,7 @@ app.get('/', (req, res) => {
     res.render('pages/main');
 });
 
-app.get('/packages', (req, res) => {
-	var dbh = mysql.createConnection( {
-			host: "localhost",
-			user: "fred",
-			password: "Password",
-			database: "travelexperts"
-		} );
-	dbh.connect((err) => {
-		if (err) throw err;
-		var sql = "SELECT * FROM packages";
-		dbh.query(sql, (err, result, fields) => {
-			res.render('pages/packages' , {
-				packages: result
-			} );
-		} );
-	} );
-	
-	
-});
+
 
 app.get('/purchasewindow', (req, res) => {
     res.render('pages/purchasewindow');
