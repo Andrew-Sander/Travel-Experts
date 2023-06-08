@@ -60,7 +60,17 @@
 		position: sticky;  
 		bottom: 0;
 	}
-	
+
+.divButXAbout
+	{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		font-size: 48pt;
+	}
+
+
 .notFoundBody {
 	margin: 0;
     background-image: url("/images/beach-steps.jpg");
