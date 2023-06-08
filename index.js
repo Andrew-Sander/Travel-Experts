@@ -13,8 +13,8 @@ app.listen(3000, (err) => {
 function getDBH() {
     return mysql.createConnection({
         host: "localhost",
-        user: "fred",
-        password: "Password",
+        user: "Team5",
+        password: "",
         database: "travelexperts"
     });
 }
@@ -30,12 +30,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/packages', (req, res) => {
-	var dbh = mysql.createConnection( {
-			host: "localhost",
-			user: "fred",
-			password: "Password",
-			database: "travelexperts"
-		} );
+	var dbh = getDBH();
 	dbh.connect((err) => {
 		if (err) throw err;
 		var sql = "SELECT * FROM packages";
@@ -48,12 +43,7 @@ app.get('/packages', (req, res) => {
 	} );
 });
 app.get('/purchasewindow', (req, res) => {
-	var dbh = mysql.createConnection( {
-			host: "localhost",
-			user: "fred",
-			password: "Password",
-			database: "travelexperts"
-		} );
+	var dbh = getDBH();
 	var sql = "SELECT PkgName FROM packages WHERE PackageId=?"
 	dbh.query({"sql": sql, "values": [req.params.id]}, (err, result) => {
 		if (err) throw err;
