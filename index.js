@@ -10,15 +10,6 @@ app.listen(3000, (err) => {
     console.log('server is listening on port 3000');
 });
 
-function getDBH() {
-    return mysql.createConnection({
-        host: "localhost",
-        user: "fred",
-        password: "Password",
-        database: "travelexperts"
-    });
-}
-
 app.use(express.static(__dirname + '/public'));
 // app.use(express.static(path.join(__dirname, 'views'), {
 //     extensions: ['html']
@@ -68,7 +59,12 @@ app.get('/purchasewindow', (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-    var dbh = getDBH();
+	var dbh = mysql.createConnection( {
+		host: "localhost",
+		user: "fred",
+		password: "Password",
+		database: "travelexperts"
+	} );
     dbh.connect((err) => {
         if (err) throw err;
         var sql = "select AgtFirstName, AgtLastName, AgtBusPhone, AgtEmail from agents";
