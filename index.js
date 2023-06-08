@@ -29,10 +29,6 @@ app.get('/', (req, res) => {
     res.render('pages/main');
 });
 
-<<<<<<< Updated upstream
-
-
-=======
 app.get('/packages', (req, res) => {
 	var dbh = mysql.createConnection( {
 			host: "localhost",
