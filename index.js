@@ -58,7 +58,12 @@ app.get('/purchasewindow', (req, res) => {
 });
 
 app.get("/contact", (req, res) => {
-    var dbh = getDBH();
+	var dbh = mysql.createConnection( {
+		host: "localhost",
+		user: "fred",
+		password: "Password",
+		database: "travelexperts"
+	} );
     dbh.connect((err) => {
         if (err) throw err;
         var sql = "select AgtFirstName, AgtLastName, AgtBusPhone, AgtEmail from agents";
