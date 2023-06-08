@@ -5,6 +5,39 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Purchase page</title>
 		<script>
+			const packageInfo new Array();
+			packageInfo[0] = {description: "Start your new year strong with the <%= packages[0].PkgName%> Package. On this trip you'll find yourself enjoying
+				beaches of [CITY NAME]", imgSrcPath: "./public/images/imgset/newyork.jpg"};
+			packageInfo[1] = {description: "New York City: Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text.",
+					imgSrcPath: "./public/images/imgset/larchdetriomphe.jpg"};
+			packageInfo[2] = {description: "Sample City: Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text.", imgSrcPath: "./public/images/imgset/sweden.JPG"};
+			packageInfo[3] = {description: "New York City: Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text.", imgSrcPath: "./public/images/imgset/sculpture.jpg"};
+			packageInfo[4] = {description: "New York City: Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text." 
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text."
+					+ "Sample text. Sample text.", imgSrcPath: "./public/images/imgset/tower.jpg"};
+			
 			function openPurchaseWindow(choice) {
 				/*if (choice == "package1") { 
 					window.open("https://en.wikipedia.org/wiki/Room_on_Fire", "", "_top", "fullscreen=yes");
@@ -40,17 +73,26 @@
 		<%- include('../partials/header') %>
 		<nav class="packagesNav">
 			<ul>
-				<li>import list with ejs</li>
-				<li><a href="#data1">Test data1</a></li>
-				<li><a href="#data2">Test data2</a></li>
-				<li><a href="#data3">Test data3</a></li>
-				<li><a href="#data4">Test data4</a></li>
-				<li><a href="#data5">Test data5</a></li>
+				<% packages.forEach(function(packages, i) { %>
+					<li>
+						<a href="packages#para<%=i%>"><%= packages.PkgName  %></a>
+						<script> console.log(document.getElementById(i).href) </script>
+					</li>
+				<% }); %>
 			</ul>
 		</nav>
 		<!--Scroll box for travel package options-->
 		<!-- Currently the options are just song lyrics and album covers for testing, I'll change it to actual package options soon-->
 		<div class="packagesMainContent">
+			<p id="para0">
+	
+				<%= packages[0].PkgName%><br/>
+				
+				Start your new year strong with the <%= packages[0].PkgName%> Package. On this trip you'll find yourself enjoying
+				beaches of [CITY NAME] 
+			</p><br/>
+			<img class="travelPackageImages" src="./images/maldives.jpg"/>
+			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
 			<!-- Template for purchase options. -- Maybe use ejs to put this in an external function and then iterate to create the list?
 			
 			<p id="data#">		I used non descriptive id names so that a for loop could automatically make new data.
@@ -62,7 +104,7 @@
 			
 			<!----------------->
 			
-			<p id="data1">
+			<p class="paragraphTest" id="para1">
 				New York City: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
 				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
 				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
@@ -73,9 +115,10 @@
 			<img class="travelPackageImages" src="./images/imgset/newyork.jpg"/>
 			<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package1')">Purchase</button><br/>
 			
+			<!--Why does the public folder not need to be mentioned?-->
 			<!----------------->
 			
-			<p id="data2">
+			<p class="paragraphTest" id="para2">
 				Paris, France: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
 				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
 				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
@@ -88,7 +131,7 @@
 			
 			<!----------------->
 			
-			<p id="data3">
+			<p class="paragraphTest" id="para3">
 				Location Name: Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
 				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 
 				Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. Sample text. 

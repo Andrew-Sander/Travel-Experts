@@ -30,7 +30,23 @@ app.get('/', (req, res) => {
 });
 
 app.get('/packages', (req, res) => {
-    res.render('pages/packages');
+	var dbh = mysql.createConnection( {
+			host: "localhost",
+			user: "fred",
+			password: "Password",
+			database: "travelexperts"
+		} );
+	dbh.connect((err) => {
+		if (err) throw err;
+		var sql = "SELECT * FROM packages";
+		dbh.query(sql, (err, result, fields) => {
+			res.render('pages/packages' , {
+				packages: result
+			} );
+		} );
+	} );
+	
+	
 });
 
 app.get('/purchasewindow', (req, res) => {
@@ -68,4 +84,4 @@ app.get('/thanks', (req, res) => {
 
 app.use((req, res) => {
     res.status(404).render('pages/404');
-})
+});
