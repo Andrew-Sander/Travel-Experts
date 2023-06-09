@@ -1,0 +1,22 @@
+<p id="bannerMsg" style="white-space: nowrap; background-color: <%= colorCodeJson %>;"><b></b></p>
+<script>
+
+    var maxCharLength = <%= maxCharLengthJson %>;
+    var freezTime = <%= freezTimeJson %>;
+    var msg = '<%= msgJson %>';
+    var bannerText = "";
+    var position = 0;
+
+    timer = setInterval(bannerReader, freezTime);
+
+    function bannerReader() {
+        bannerText = msg.substr(position, maxCharLength);
+        document.getElementById("bannerMsg").innerText = bannerText;
+
+        position++;
+        if (position > msg.length - maxCharLength) {
+            position = 0;
+        }
+    }
+
+</script>
