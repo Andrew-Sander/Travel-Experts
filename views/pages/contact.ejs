@@ -17,22 +17,20 @@
                 width: 100%;
                 text-align: center;
             }
-			.contactRed {
-				color:red;
-			}
         </style>
     </head>
     <body class="contactBody">
         <div class="w3-container"><%- include('../partials/header') %></div>
-        
         <div class="contactInfo">
             <h2>Travel-Experts.ltd</h2><br />
             <p>Business Phone: 1(403)222-2222</p><br />
             <p>Email: travelexperts@bussiness.com</p><br />
             <p>Location: 1301 16 Ave NW, Calgary AB T2M 0L4</p><br />
         </div><br />
+        <div class="contactSlide">
+            <p>&#8691 Contact Our Superstar travel agents!!! &#8691</p>
+        </div>
         <div class="contactSelect">
-        <p class="contactRed">Contact Our Superstar travel agents!!!</p>
             <select id="select" onchange="onChange(this.value)">
                 <% result.forEach(function(agent, i) { %>
                     <option value="<%= agent.AgtBusPhone%> <%= agent.AgtEmail %>"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></option>

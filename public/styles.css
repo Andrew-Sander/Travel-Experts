@@ -278,7 +278,6 @@ body.contactBody {
 	background-size: cover;
 	font-family: Arial, sans-serif;
 }
-
 .contactSlogon {
 	font-style: italic;
 	text-align: center;
@@ -286,29 +285,21 @@ body.contactBody {
 	font-size: 100px;
 	color: red;
 }
-
 /* Contact sticky slide down sign */
 div.contactSlide {
 	text-align: center;
-	width: 300px;
+	width: 500px;
 	height: 30px;
 	left: 40%;
 	position: fixed;
 	font-size: 20px;
 	top: 600px;
+	color:red;
 	background-color: #333;
 }
-
-div.contactSlide:before {
-	content: "\21F3";
-}
-
-div.contactSlide:after {
-	content: "\21F3";
-}
-
 div.contactInfo {
-	border: 2px solid black;
+	border: 2px solid slategray;
+	color: slategray;
 	padding: 25px;
 	line-height: 0.5;
 	background-color:white;
@@ -318,9 +309,7 @@ div.contactInfo {
 	font-size: 20px;
 	top: 250px;
 	border-radius: 8px;
-
 }
-
 div.contactSelect {
 	text-align: center;
 	left: 36%;
@@ -328,5 +317,4 @@ div.contactSelect {
 	font-size: 20px;
 	top: 1100px;
 }
-
 /* End of Contact*/

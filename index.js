@@ -26,34 +26,8 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ "extended": true}));
 
 app.get('/', (req, res) => {
-
-    var dbh = getDBH();
-    dbh.connect
-        (
-            (err) => {
-                if (err) throw err;
-                var sql = "SELECT  TIMESTAMPDIFF(DAY, PkgStartDate, PkgEndDate) as PkgDuration,PkgName, PkgBasePrice FROM packages WHERE PkgBasePrice in (SELECT min(PkgBasePrice) FROM packages)";
-                dbh.query(sql, (err, result) => {
-                    if (err) throw err;
-                    //console.log(result[0].PkgDuration, result[0].PkgName, result[0].PkgBasePrice);
-                    //res.render('partials/sales');
-                    res.render('pages/main', { "PkgDuration": result[0].PkgDuration, "PkgName": result[0].PkgName, "PkgBasePrice": result[0].PkgBasePrice });
-                    dbh.end(
-                        (err) => {
-                            if (err) throw err;
-                            console.log("database connection for main page is successfully disconnected.");
-                        }
-                    );
-                }
-                );
-
-
-            }
-
-        )
-}
-);
-
+    res.render('pages/main');
+});
 
 app.get('/packages', (req, res) => {
 	var dbh = getDBH();
@@ -86,8 +60,8 @@ app.get('/purchasewindow', (req, res) => {
 app.get("/contact", (req, res) => {
 	var dbh = mysql.createConnection( {
 		host: "localhost",
-		user: "fred",
-		password: "Password",
+		user: "Team5",
+		password: "",
 		database: "travelexperts"
 	} );
     dbh.connect((err) => {
