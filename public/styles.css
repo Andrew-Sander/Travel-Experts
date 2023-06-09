@@ -287,15 +287,15 @@ body.contactBody {
 }
 /* Contact sticky slide down sign */
 div.contactSlide {
+	position: absolute;
+	z-index: 100;
 	text-align: center;
-	width: 500px;
-	height: 30px;
-	left: 40%;
-	position: fixed;
+	width: 400px;
+	height: 20px;
+	left: 39%;
 	font-size: 20px;
-	top: 600px;
+	top: 700px;
 	color:red;
-	background-color: #333;
 }
 div.contactInfo {
 	border: 2px solid slategray;
@@ -312,9 +312,9 @@ div.contactInfo {
 }
 div.contactSelect {
 	text-align: center;
-	left: 36%;
+	left: 45%;
 	position: absolute;
 	font-size: 20px;
-	top: 1100px;
+	top: 1200px;
 }
 /* End of Contact*/
