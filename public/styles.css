@@ -70,12 +70,6 @@
 		font-size: 48pt;
 	}
 
-#saleMsg {
-	display: flex;
-	background-color: #e04f4f;
-	font-size: larger;
-	justify-content: center;
-}
 
 .notFoundBody {
 	margin: 0;
