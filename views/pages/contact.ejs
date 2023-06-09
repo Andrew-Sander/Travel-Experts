@@ -13,7 +13,7 @@
             }
             footer {
                 position: absolute;
-                top: 1250px;
+                top: 1350px;
                 width: 100%;
                 text-align: center;
             }
@@ -28,15 +28,17 @@
             <p>Location: 1301 16 Ave NW, Calgary AB T2M 0L4</p><br />
         </div><br />
         <div class="contactSlide">
-            <p>&#8691 Contact Our Superstar travel agents!!! &#8691</p>
+            <p id="moveText">&#8691 Contact Our Superstar travel agents!!! &#8691</p>
         </div>
         <div class="contactSelect">
             <select id="select" onchange="onChange(this.value)">
                 <% result.forEach(function(agent, i) { %>
-                    <option value="<%= agent.AgtBusPhone%> <%= agent.AgtEmail %>"><%= agent.AgtFirstName %> <%= agent.AgtLastName %></option>
+                    <option value="<%= agent.AgtBusPhone%> <%= agent.AgtEmail %>">
+                        <%= agent.AgtFirstName %> <%= agent.AgtLastName %>
+                    </option>
                 <% }); %>
             </select>
-            <p id="label">Default Text</p>
+            <p id="contactLabel">Call to check Limited-Timer Offer </p>
         </div>
         <footer>
             <p>Copyright &copy; To Travel-Experts(TEAM 5) Inc. 2023</p>
@@ -45,15 +47,15 @@
 			function onChange() {
 				var x = document.getElementById("select").selectedIndex;
                 var info = document.getElementsByTagName("option")[x].value;
-				document.getElementById("label").innerHTML = info  ;
+				document.getElementById("contactLabel").innerHTML = info  ;
 			}
             
             document.onscroll = function () {
-                if (window.innerHeight + window.scrollY > document.body.clientHeight) {
-                    document.getElementsByClassName('contactSlide').style.display = 'none';
+                if (window.scrollY > "10px") {
+                    document.getElementById('moveText').style.position = 'absolute';
                 }
                 else {
-                    document.getElementsByClassName('contactSlide').style.display = 'block';
+                    document.getElementById('moveText').style.position = 'fixed';
                 }
             }
 			/*document.onscroll = function () {
