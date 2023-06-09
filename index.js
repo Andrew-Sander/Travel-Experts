@@ -79,17 +79,20 @@ app.get('/purchasewindow', (req, res) => {
 		} );
 	} );
 } );
+
+app.get('/register', (req, res) => {
+    res.render('pages/register');
+});
+app.get('/thanks', (req, res) => {
+    res.render('pages/thanks');
+});
+
 app.get('/purchasewindow', (req, res) => {
     res.render('pages/purchasewindow');
 });
 
 app.get("/contact", (req, res) => {
-	var dbh = mysql.createConnection( {
-		host: "localhost",
-		user: "Team5",
-		password: "",
-		database: "travelexperts"
-	} );
+	var dbh = getDBH();
     dbh.connect((err) => {
         if (err) throw err;
         var sql = "select AgtFirstName, AgtLastName, AgtBusPhone, AgtEmail from agents";
@@ -103,7 +106,6 @@ app.get("/contact", (req, res) => {
         });
     });
 });
-z
 
 // app.post("/create-post", (req, res) => {
 //     console.log(req.body.name + " " + req.body.phone + " " + req.body.message);
