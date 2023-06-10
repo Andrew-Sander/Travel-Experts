@@ -75,6 +75,10 @@
 
 }
 
+.popup #aboutText {
+	text-align: justify;
+}
+
 .notFoundBody {
 	margin: 0;
 	background-image: url("/images/beach-steps.jpg");
