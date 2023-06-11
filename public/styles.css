@@ -289,19 +289,41 @@ textarea {
 }
 
 .customerFormDiv {
-	width: 90%;
-	height: 90%;
-	position: absolute;
-	transform: translate(5%, 5%);
-	background-color: lightblue;
-	overflow-y: scroll;
+	width: 60%;
+	height: 80%;
+	transform: translate(0%, 7%);
+	margin: auto;
+	background-color: white;
+	border-radius: 8px;
+	 
 }
 
 .customerForm {
-	position: relative;
-	transform: translate(5%, 5%);
-	width: 40%;
+	margin:	auto;
+	transform: translate(0%, 5%);
+	width: 80%;
+	height: 80%;
 }
+/*Multi Step Form */
+.step {
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbbbbb;
+	border: none;  
+	border-radius: 50%;
+	display: inline-block;
+	opacity: 0.5;
+  }
+  .step.active {
+	opacity: 1;
+  }
+  .pruchaseFormButton {
+	position: relative;
+  }
+/*End of Purchase window*/
+
+
 
 /* contact.ejs style */
 body.contactBody {

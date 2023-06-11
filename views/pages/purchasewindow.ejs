@@ -1,4 +1,5 @@
 <!--Purchase Page-->
+<!--Cameron Olmats-->
 <!DOCTYPE html>
 <html>
 	<head>
@@ -16,7 +17,9 @@
 				 width: 100%; 
 				 margin: 0;
 			}
-			
+			body {
+				background-image: url("/images/maldives.jpg");
+			}
 		</style>
 		<script>
 			function toggleBilling() {
@@ -40,95 +43,152 @@
 		<%- include('../partials/header') %>
 		<div class="customerFormDiv">
 			<!--Might wanna put tool tips explaining what we're collecting the data for-->
-			
-			
-			<!--I am unsure if I should be using two forms for Shipping and Billing info or one unified form with the headers and such inside-->
-			<form class="customerForm" action="">
-				<div id="orderDetails">
+			<form class="customerForm" action="bouncer.php">
+				<div style="text-align: center">
+					<span class="step"></span>
+					<span class="step"></span>
+					<span class="step"></span>
+					<span class="step"></span>
+				</div>
+				<div class=tab id="orderDetails">
 					<h2>Order information</h2>
 					<label for="needsFlight">Include flight:&nbsp;</label>
-					<input type="checkbox" id="needsFlight" name="needsFlight"></input><br/>
+					<input type="checkbox" id="needsFlight" name="needsFlight"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="needsHotel">Book hotel(s) for me:&nbsp;</label>
-					<input type="checkbox" id="needsHotel" name="needsHotel"></input><br/>
+					<input type="checkbox" id="needsHotel" name="needsHotel"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="needsCar">Rent a car:&nbsp;</label>
-					<input type="checkbox" id="needsCar" name="needsCar"></input><br/>
+					<input type="checkbox" id="needsCar" name="needsCar"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="departureDate">Departure date*:&nbsp;</label>
-					<input type="date" id="departureDate" name="departureDate"></input><br/>
+					<input type="date" id="departureDate" name="departureDate"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="returnDate">Return date*:&nbsp;</label>
-					<input type="date" id="returnDate" name="returnDate"></input><br/>
+					<input type="date" id="returnDate" name="returnDate"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="numOfTravelers">Number of travelers:&nbsp;</label>
-					<input type="number" id="numOfTravelers" name="numOfTravelers" value="1"></input><br/>
+					<input type="number" id="numOfTravelers" name="numOfTravelers" value="1"placeholder="" oninput="this.className = ''"></input><br/>
 					
 				</div>
-				<div id="shippingAddress">
-					<h2>Shipping information</h2>
+				<div class=tab id="shippingAddress">
+					<h2>Home Address</h2>
 					<label for="custFirstName">First name*</label><br/>
-					<input type="text" id="custFirstName" name="custFirstName" value="First name"></input><br/>
+					<input type="text" id="custFirstName" name="custFirstName" value="First name"placeholder="" oninput="this.className = ''"></input><br/>
 					
-					<!--I figure most online stores don't keep track of middle names. Do travel companies keep track of that?-->
 					
 					<label for="custLastName">Last name*</label><br/>
-					<input type="text" id="custLastName" name="custLastName" value="Last Name"></input><br/>
+					<input type="text" id="custLastName" name="custLastName" value="Last Name"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="custStreetAddress">Street Address*</label><br/>
 					<textarea id="custStreetAddress" name="custStreetAddress">Street Address</textarea><br/>
 					<label for="custAptOrSuit">Apt. or suite (optional)</label><br/>
 					<textarea id="custAptOrSuit" name="custAptOrSuit">Apt. or suite (optional)</textarea><br/>
 					<label for="custCountry">Country*</label><br/>
-					<input type="text" id="custCountry" name="custCountry" value="Country"></input><br/>
+					<input type="text" id="custCountry" name="custCountry" value="Country"placeholder="" oninput="this.className = ''"></input><br/>
 					
 					<!--if we support multiple countries we'll need to change the input labels for province to states if US is selected-->
 					
 					<label for="custProvince">Province*</label><br/>
-					<input type="text" id="custProvince" name="custProvince" value="Province"></input><br/>
+					<input type="text" id="custProvince" name="custProvince" value="Province"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="custCity">City*</label><br/>
-					<input type="text" id="custCity" name="custCity" value="City"></input><br/>
-					<label for="custPhone">Phone</label><br/>
-					<input type="text" id="custPhone" name="custPhone" value="Phone"></input><br/>
-					<label for="custEmail">Email</label><br/>
-					<input type="text" id="custEmail" name="custEmail" value="Email"></input><br/>
-					<p id="phoneDisclaimer">We will only use your email and phone number to send your tickets and reciepts and/or contact you should any issues arise. 
-						Your contact information will not be distributed.</p>
+					<input type="text" id="custCity" name="custCity" value="City" placeholder="" oninput="this.className = ''"></input><br/>
 				</div>
-				<div id="billingAddress">
-					<h2>Billing Information</h2>
-					<label for="sameAsShippingAddress">Shipping Address is same as Billing Address</label>
-					<input type="checkbox" id="sameAsShippingAddress" name="sameAsShippingAddress" onClick="toggleBilling(this.value)" checked="checked"></input><br/><br/>
+				<div class=tab id="billingAddress">
+					<h2 style="display: inline-block">Billing Information &nbsp;&nbsp;</h2>
+					<label for="sameAsShippingAddress">Home Address is same as Billing Address</label>
+					<input type="checkbox" id="sameAsShippingAddress" name="sameAsShippingAddress" onClick="toggleBilling(this.value)" checked="checked" placeholder="" oninput="this.className = ''"></input>
 					
 					<label for="billingFirstName">First name*</label><br/>
-					<input class="billingInput" type="text" id="billingFirstName" name="billingFirstName" value="First name" disabled="true"></input><br/>
+					<input class="billingInput" type="text" id="billingFirstName" name="billingFirstName" value="First name" disabled="true"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="billingLastName">Last name*</label><br/>
-					<input class="billingInput" type="text" id="billingLastName" name="billingLastName" value="Last Name" disabled="true"></input><br/>
+					<input class="billingInput" type="text" id="billingLastName" name="billingLastName" value="Last Name" disabled="true"placeholder="" oninput="this.className = ''"></input><br/>
 					
 					<label for="billingStreetAddress">Street Address*</label><br/>
 					<textarea class="billingInput" id="billingStreetAddress" name="billingStreetAddress" value="Street Address" disabled="true"></textarea><br/>
 					<label for="billingAptOrSuit">Apt. or suite (optional)</label><br/>
 					<textarea class="billingInput" id="billingAptOrSuit" name="billingAptOrSuit" value="Apt. or suite (optional)" disabled="true"></textarea><br/>
 					<label for="billingCountry">Country*</label><br/>
-					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="Country" disabled="true"></input><br/>
+					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="Country" disabled="true"placeholder="" oninput="this.className = ''"></input><br/>
 					
 					<label for="billingProvince">Province*</label><br/>
-					<input class="billingInput" type="text" id="billingProvince" name="billingProvince" value="Province" disabled="true"></input><br/>
+					<input class="billingInput" type="text" id="billingProvince" name="billingProvince" value="Province" disabled="true"placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="billingCity">City*</label><br/>
-					<input class="billingInput" type="text" id="billingCity" name="billingCity" value="City" disabled="true"></input><br/>
+					<input class="billingInput" type="text" id="billingCity" name="billingCity" value="City" disabled="true"placeholder="" oninput="this.className = ''"></input><br/>
 				</div>
-				<div id="paymentDetails">
+				<div class=tab id="paymentDetails">
 					<h2>Payment Details</h2>
 					<!--Add picture button selectors for MasterCard and Visa and maybe a third choice-->
 					<label for="cardNumber">Card Number*</label><br/>
-					<input type="text" id="cardNumber" name="cardNumber" value="---- ---- ---- ----" ></input><br/>
+					<input type="text" id="cardNumber" name="cardNumber" value="---- ---- ---- ----" placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="cardExpiration">Expiration Date*</label><br/>
-					<input type="text" id="cardExpiration" name="cardExpiration" value="mm/yy" ></input><br/>
+					<input type="text" id="cardExpiration" name="cardExpiration" value="mm/yy" placeholder="" oninput="this.className = ''"></input><br/>
 					<label for="cardCVV">CVV*</label><br/> <!--Would be cool to put little diagram of the card layout INSIDE the input box to the far right-->
-					<input type="text" id="cardCVV" name="cardCVV" value="---" ></input><br/>
+					<input type="text" id="cardCVV" name="cardCVV" value="---" placeholder="" oninput="this.className = ''"></input><br/>
+					<label for="custPhone">Phone</label><br/>
+					<input type="text" id="custPhone" name="custPhone" value="Phone"placeholder="" oninput="this.className = ''"></input><br/>
+					<label for="custEmail">Email</label><br/>
+					<input type="text" id="custEmail" name="custEmail" value="Email"placeholder="" oninput="this.className = ''"></input><br/>
+					<p id="phoneDisclaimer">We will only use your email and phone number to send your tickets and reciepts and/or contact you should any issues arise. 
+						Your contact information will not be distributed.</p>
 				</div>
-				<button type="submit">Proceed to Purchase</button>
+				<div style="overflow:auto;">
+					<div style="float:right;">
+						<button type="button" class="pruchaseFormButton" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+						<button type="button" class="pruchaseFormButton" id="nextBtn" onclick="nextPrev(1)">Next</button>
+					</div>
+				</div>
+				<!--<button type="submit">Proceed to Purchase</button>-->
 			</form>
 			
 		</div>
-		
-		
-		
 		<footer>
 		</footer>
+		<script>
+			var currentTab = 0;
+			showTab(currentTab);
+			function showTab(n) {
+				var tabsList = document.getElementsByClassName("tab");
+				tabsList[n].style.display = "block";
+				if (n == 0) {
+					document.getElementById("prevBtn").style.display = "none";
+				}
+				else {
+					document.getElementById("prevBtn").style.display = "inline-block";
+				}
+				if (n == (tabsList.length)) {
+					document.getElementById("nextBtn").innerHTML = "Submit";
+				}
+				else {
+					document.getElementById("nextBtn").innerHTML = "Next";
+				}
+				fixStepIndicator(n);
+			}
+			function nextPrev(n) {
+				var tabsList = document.getElementsByClassName("tab");
+				/*if (n == 1 && !validateForm()) {
+					return false;
+				}*/
+				tabsList[currentTab].style.display = "none";
+				currentTab += n;
+				if (currentTab >= tabsList.length) {
+					document.getElementById("customerForm").submit();
+					return false;
+				}
+				showTab(currentTab);
+			}
+			
+			function validateForm() {
+				tabsList = document.getElementsByClassName("tab");
+				currentTabFields = tabsList[currentTab].getElementsByClassName("input");
+				for (field in currentTabFields) {
+					if (field.value == ""){
+						field.className += "invalid";
+						valid = false
+					}
+				}
+			}
+			function fixStepIndicator(n) {
+				var i, stepsList = document.getElementsByClassName("step");
+				for (i=0; i < stepsList.length; i++) {
+					stepsList[i].className = stepsList.className.replace(" active", "");
+				}
+				stepsList[n].className += "active";
+			}
+		</script>
 	</body>
 </html>
