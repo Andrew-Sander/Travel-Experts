@@ -22,6 +22,8 @@
 			}
 		</style>
 		<script>
+			var defaultFormValues = new Array();
+
 			function toggleBilling() {
 				myCheck = document.getElementById("sameAsShippingAddress");
 				myInputs = document.getElementsByClassName("billingInput")
@@ -69,11 +71,11 @@
 				<div class=tab id="shippingAddress">
 					<h2>Home Address</h2>
 					<label for="custFirstName">First name*</label><br/>
-					<input type="text" id="custFirstName" name="custFirstName" value="First name"placeholder="" oninput="this.className = ''"></input><br/>
+					<input type="text" id="custFirstName" name="custFirstName" value="" placeholder="First name" oninput="this.className = ''"></input><br/>
 					
 					
 					<label for="custLastName">Last name*</label><br/>
-					<input type="text" id="custLastName" name="custLastName" value="Last Name"placeholder="" oninput="this.className = ''"></input><br/>
+					<input type="text" id="custLastName" name="custLastName" value="" placeholder="Last Name" oninput="this.className = ''"></input><br/>
 					<label for="custStreetAddress">Street Address*</label><br/>
 					<textarea id="custStreetAddress" name="custStreetAddress">Street Address</textarea><br/>
 					<label for="custAptOrSuit">Apt. or suite (optional)</label><br/>
@@ -126,10 +128,12 @@
 					<p id="phoneDisclaimer">We will only use your email and phone number to send your tickets and reciepts and/or contact you should any issues arise. 
 						Your contact information will not be distributed.</p>
 				</div>
-				<div style="overflow:auto;">
+				<div class="buttonGroup">
 					<div style="float:right;">
-						<button type="button" class="pruchaseFormButton" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-						<button type="button" class="pruchaseFormButton" id="nextBtn" onclick="nextPrev(1)">Next</button>
+						
+						<button type="button" class="purchaseFormButton" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+						<button type="button" class="purchaseFormButton" id="nextBtn" onclick="nextPrev(1)">Next</button>
+						
 					</div>
 				</div>
 				<!--<button type="submit">Proceed to Purchase</button>-->
@@ -176,7 +180,7 @@
 				tabsList = document.getElementsByClassName("tab");
 				currentTabFields = tabsList[currentTab].getElementsByClassName("input");
 				for (field in currentTabFields) {
-					if (field.value == ""){
+					if ((field.type == "text") && (field.value == "")){
 						field.className += "invalid";
 						valid = false
 					}
@@ -185,7 +189,7 @@
 			function fixStepIndicator(n) {
 				var i, stepsList = document.getElementsByClassName("step");
 				for (i=0; i < stepsList.length; i++) {
-					stepsList[i].className = stepsList.className.replace(" active", "");
+					stepsList[i].className = stepsList[i].className.replace(" active", "");
 				}
 				stepsList[n].className += "active";
 			}

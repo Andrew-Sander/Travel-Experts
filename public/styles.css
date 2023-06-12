@@ -310,6 +310,8 @@ input.invalid {
 
 /*End Packages page*/
 
+
+
 /* purchase window styles*/
 
 /*Heads up. I'm changing the <textarea> tag without selecting
@@ -332,7 +334,7 @@ textarea {
 	margin:	auto;
 	transform: translate(0%, 5%);
 	width: 80%;
-	height: 80%;
+	height: 95%;
 }
 /*Multi Step Form */
 .step {
@@ -348,8 +350,14 @@ textarea {
   .step.active {
 	opacity: 1;
   }
-  .pruchaseFormButton {
-	position: relative;
+  .buttonGroup {
+	position: absolute;
+	bottom: 0px;
+	right:0;
+	overflow: auto;
+  }
+  .purchaseFormButton {
+	/*in case it's needed, will delete before presentation date or when I figure this page out*/
   }
 /*End of Purchase window*/
 
