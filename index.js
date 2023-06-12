@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const mysql = require ('mysql');
-const bodyParser = require ('body-parser');
 
 app.set('view engine', 'ejs');
 
@@ -19,7 +18,6 @@ function getDBH() {
     });
 }
 
-app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ "extended": true}));
@@ -108,9 +106,8 @@ app.post("/register", (request, response) => {
 			dbh.end((err) => {
                 if (err) throw err;
                 console.log("Disconnected from the server");
-				response.send('that username is already taken');
             });
-			response.status(200);
+			response.render('pages/register-error');
 		} else {
 			var insertQuery = "INSERT INTO customers (CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustHomePhone, CustEmail, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
@@ -147,9 +144,7 @@ app.post('/login', function(request, response) {
 					CustFirstName: CustFirstName
 				});
 			} else {
-				// popups.alert({
-                //     content: 'Incorrect Username or Password'
-                // });
+				response.render('pages/login-error');
 			}			
 			response.end();
 		});
