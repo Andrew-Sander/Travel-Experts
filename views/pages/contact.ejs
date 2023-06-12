@@ -18,10 +18,12 @@
                 text-align: center;
             }
             .textChange {
+                position: absolute;
                 top:1100px;
-                left: 40%;
+                left: 20%;
                 transition: color 0.3s ease;
                 cursor: pointer;
+                width:1200px;
                 
             }
             .textChange:hover {
@@ -63,7 +65,12 @@
 
             document.addEventListener('DOMContentLoaded', function() {
                 var textElement = document.getElementById('text');
-                var phrases = ['Welcome', 'Hello', 'Nice to meet you', 'Glad you came'];
+                var phrases = [
+                    'Limited-Time Offer:Asian Expedition - Now just2800 CAD  for 14 days!', 
+                    'Hello', 
+                    'Nice to meet you', 
+                    'Glad you came'
+                ];
                 var currentIndex = 0;
 
             textElement.addEventListener('click', function() {
