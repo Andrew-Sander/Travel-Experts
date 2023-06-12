@@ -17,6 +17,16 @@
                 width: 100%;
                 text-align: center;
             }
+            .textChange {
+                top:1100px;
+                left: 40%;
+                transition: color 0.3s ease;
+                cursor: pointer;
+                
+            }
+            .textChange:hover {
+                color: red;
+            }
         </style>
     </head>
     <body class="contactBody">
@@ -27,6 +37,7 @@
             <p>Email: travelexperts@bussiness.com</p><br />
             <p>Location: 1301 16 Ave NW, Calgary AB T2M 0L4</p><br />
         </div><br />
+        <h1 class="textChange" id="text">Package Sales!</h1>
         <div class="contactSlide">
             <p id="moveText">&#8691 Contact Our Superstar travel agents!!! &#8691</p>
         </div>
@@ -49,6 +60,18 @@
                 var info = document.getElementsByTagName("option")[x].value;
 				document.getElementById("contactLabel").innerHTML = info  ;
 			}
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var textElement = document.getElementById('text');
+                var phrases = ['Welcome', 'Hello', 'Nice to meet you', 'Glad you came'];
+                var currentIndex = 0;
+
+            textElement.addEventListener('click', function() {
+                currentIndex = (currentIndex + 1) % phrases.length;
+                textElement.innerHTML = phrases[currentIndex];
+                });
+            });
+
             
             document.onscroll = function () {
                 if (window.scrollY > "10px") {
