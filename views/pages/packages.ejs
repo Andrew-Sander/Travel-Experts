@@ -30,14 +30,15 @@
 	
 	<!---->
 	<body class="packagesBody">
-		<!--same nav bar as on register.html-->
+		<!--Uniform Nav Bar-->
 		<%- include('../partials/header') %>
+
+		
 		<nav class="packagesNav">
 			<ul>
 				<% packages.forEach(function(packages, i) { %>
 					<li>
 						<a href="packages#para<%=i%>"><%= packages.PkgName  %></a>
-						<script> console.log(document.getElementById(i).href) </script>
 					</li>
 				<% }); %>
 			</ul>
@@ -55,9 +56,9 @@
 				</p><br/>
 				<img class="travelPackageImages" src="./images/maldives.jpg"/>
 				<button class="purchaseButton" type="button" onclick="openPurchaseWindow('package2')">Purchase</button><br/>
+
 				<!-- Template for purchase options. -- Maybe use ejs to put this in an external function and then iterate to create the list?
 				
-				<p id="data#">		I used non descriptive id names so that a for loop could automatically make new data.
 				
 				</p><br/>
 				<img/>
