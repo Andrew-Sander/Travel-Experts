@@ -350,6 +350,9 @@ textarea {
   .step.active {
 	opacity: 1;
   }
+  .step.finish {
+	background-color: #04AA6D;
+  }
   .buttonGroup {
 	position: absolute;
 	bottom: 0px;
