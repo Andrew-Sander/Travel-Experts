@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
-const path = require('path');
 const mysql = require ('mysql');
-const session = require('express-session');
+const bodyParser = require ('body-parser');
 
 app.set('view engine', 'ejs');
 
@@ -11,17 +10,6 @@ app.listen(3000, (err) => {
     console.log('server is listening on port 3000');
 });
 
-const connection = mysql.createConnection({
-    host: "localhost",
-    user: "Team5",
-    password: "",
-    database: "travelexperts"
-});
-
-connection.connect((err) => {
-    if (err) throw err;
-    console.log('Connected to mysql database');
-});
 function getDBH() {
     return mysql.createConnection({
         host: "localhost",
@@ -31,14 +19,10 @@ function getDBH() {
     });
 }
 
+app.use(bodyParser.json());
 app.use(express.static(__dirname + '/public'));
 app.use(express.json());
 app.use(express.urlencoded({ "extended": true}));
-app.use(session({
-	secret: 'secret',
-	resave: true,
-	saveUninitialized: true
-}));
 
 app.get('/', (req, res) => {
     res.render('pages/main');
@@ -71,8 +55,8 @@ app.get('/purchasewindow', (req, res) => {
 app.get("/contact", (req, res) => {
 	var dbh = mysql.createConnection( {
 		host: "localhost",
-		user: "fred",
-		password: "Password",
+		user: "Team5",
+		password: "",
 		database: "travelexperts"
 	} );
     dbh.connect((err) => {
@@ -99,33 +83,69 @@ app.get('/welcome', (req, res) => {
 app.get('/login', (req, res) => {
     res.render('pages/login');
 });
-app.get('/account', (req, res) => {
-    console.log('account account')
-});
-app.post("/register", (req, res) => {
-    console.log(req.body.fname + ", " + req.body.phone);
 
+app.post("/register", (request, response) => {
 
-    res.redirect('/welcome');
+	var dbh = getDBH();
+
+	let CustFirstName = request.body.fname;
+	var CustLastName = request.body.lname;
+	var CustAddress = request.body.address;
+	var CustCity = request.body.city;
+	var CustProv = request.body.province;
+	var CustPostal = request.body.postal;
+	var CustHomePhone = request.body.phone;
+	var CustEmail = request.body.email;
+	var username = request.body.username;
+	var password = request.body.password;
+
+	var usernameQuery = "SELECT * FROM customers WHERE username = ?";
+	
+	dbh.query({"sql": usernameQuery, "values": [username]}, (err, rows) => {
+		if (err) throw err;
+		if (rows.length > 0) {
+			console.log('username already in use');		
+			dbh.end((err) => {
+                if (err) throw err;
+                console.log("Disconnected from the server");
+				response.send('that username is already taken');
+            });
+			response.status(200);
+		} else {
+			var insertQuery = "INSERT INTO customers (CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustHomePhone, CustEmail, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+  			dbh.query({"sql": insertQuery, "values": [CustFirstName, CustLastName, CustAddress, CustCity, CustProv, CustPostal, CustHomePhone, CustEmail, username, password]},  (err, result) => {
+    			if (err) throw err;
+    			console.log("1 record inserted");
+ 			});
+   			response.render('pages/welcome', {
+				CustFirstName: CustFirstName
+			});
+		}
+
+	});
+
 });
 
 app.post('/login', function(request, response) {
-	
+	var dbh = getDBH();
+
 	let username = request.body.username;
 	let password = request.body.password;
 	
 	if (username && password) {
 		
-		connection.query('SELECT * FROM customers WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
+		dbh.query('SELECT * FROM customers WHERE username = ? AND password = ?', [username, password], function(error, results, fields) {
 			
 			if (error) throw error;
 
 			if (results.length > 0) {
 				
-				request.session.loggedin = true;
-				request.session.username = username;
-				
-				response.redirect('/welcome');
+				var CustFirstName = results[0].CustFirstName;
+
+				response.render('pages/welcome', {
+					CustFirstName: CustFirstName
+				});
 			} else {
 				// popups.alert({
                 //     content: 'Incorrect Username or Password'

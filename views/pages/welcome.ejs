@@ -5,14 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-    <title>404</title>
+    <title>Welcome</title>
 </head>
-<body class="regBody">
+<body class="welcomeBody">
     <%- include('../partials/header') %>
-    <main id="registerContainer">
-        <div id="registerForm">
-        <h1>Welcome!</h1>
-        <a class="navLink" href="/account">View my account</a>
+    <main id="welcomeContainer">
+        <!-- very janky, only used as placeholder to show what account page could look like -->
+        <div id="welcomeForm">
+            <h1 style="text-align: center;">Welcome <%= CustFirstName %>!</h1>
+            <div style="float: left;">   
+                <h3>Account Details</h3>
+                <a href="">Edit</a>
+                <h4>Address:</h4>
+                <p>111 fake st NW, Calgary AB</p>
+                <h4>Postal Code:</h4>
+                <p>T3T 1T1</p>
+                <a href="">Payment Details</a>
+            </div>
+            <div style="float: right; max-width: 200px;">
+                <h3>Purchase Details</h3>
+                <h4>Packages Purchased:</h4>
+                <h4>Carribean</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores perspiciatis minima ipsa nam magni architecto.</p>
+                <h4>Payment</h4>
+                <p>4500$</p>
+                <a href="/packages">Purchase a new package!</a>
+            </div>
         </div>
     </main>
 </body>
