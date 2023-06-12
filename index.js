@@ -86,7 +86,7 @@ app.post("/register", (request, response) => {
 
 	var dbh = getDBH();
 
-	let CustFirstName = request.body.fname;
+	var CustFirstName = request.body.fname;
 	var CustLastName = request.body.lname;
 	var CustAddress = request.body.address;
 	var CustCity = request.body.city;
