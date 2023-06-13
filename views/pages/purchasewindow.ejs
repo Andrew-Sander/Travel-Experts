@@ -20,6 +20,16 @@
 			body {
 				background-image: url("/images/maldives.jpg");
 			}
+			#sameAsShippingAddress {
+				vertical-align: middle;
+			}
+			#checkboxLabel {
+				display: inline-block;
+				white-space: nowrap;
+			}
+			#sameAsShippingAddress {
+				width: 10px;
+			}
 		</style>
 		<script>
 			var defaultFormValues = new Array();
@@ -45,7 +55,7 @@
 		<%- include('../partials/header') %>
 		<div class="customerFormDiv">
 			<!--Might wanna put tool tips explaining what we're collecting the data for-->
-			<form class="customerForm" action="bouncer.php">
+			<form class="customerForm" action="bouncer.php" method="post"	>
 				<div style="text-align: center">
 					<span class="step">1</span>
 					<span class="step">2</span>
@@ -81,9 +91,9 @@
 					<label for="custLastName">Last name</label><br/>
 					<input type="text" class="mandatory" id="custLastName" name="custLastName" value="" placeholder="Last Name" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custStreetAddress">Street Address</label><br/>
-					<textarea class="mandatory" id="custStreetAddress" name="custStreetAddress" value="" placeholder="Street Address" oninput="this.className = 'mandatory'"></textarea><br/>
+					<input type="text" class="mandatory" id="custStreetAddress" name="custStreetAddress" value="" placeholder="Street Address" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custAptOrSuit">Apt. or suite (optional)</label><br/>
-					<textarea id="custAptOrSuit" name="custAptOrSuit" placeholder="Apt. or suite (optional)"></textarea><br/>
+					<input type="text" id="custAptOrSuit" name="custAptOrSuit" placeholder="Apt. or suite (optional)"></input><br/>
 					<label for="custCountry">Country</label><br/>
 					<input type="text" class="mandatory" id="custCountry" name="custCountry" value="" placeholder="Country" oninput="this.className = 'mandatory'"></input><br/>
 					
@@ -97,19 +107,20 @@
 
 				<!--BILLING ADDRESS-->
 				<div class=tab id="billingAddress">
-					<h2 style="display: inline-block">Billing Information &nbsp;&nbsp;</h2>
-					<label for="sameAsShippingAddress">Home Address is same as Billing Address</label>
-					<input type="checkbox" id="sameAsShippingAddress" name="sameAsShippingAddress" onClick="toggleBilling(this.value)" checked="checked" oninput="addMandatory([])"></input>
-					
+					<div id="checkboxLabel">
+						<h2 style="display: inline-block">Billing Information &nbsp;&nbsp;</h2>
+						<label for="sameAsShippingAddress">Home Address is same as Billing Address &nbsp;&nbsp;<input type="checkbox" id="sameAsShippingAddress" name="sameAsShippingAddress" onClick="toggleBilling(this.value)" checked="checked" oninput="addMandatory([])"></input>
+						</label>
+					</div><br/>
 					<label for="billingFirstName">First name</label><br/>
 					<input class="billingInput" type="text" id="billingFirstName" name="billingFirstName" value="" disabled="true" placeholder="First name" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="billingLastName">Last name</label><br/>
 					<input class="billingInput" type="text" id="billingLastName" name="billingLastName" value="" disabled="true" placeholder="Last Name" oninput="this.className = 'mandatory'"></input><br/>
 					
 					<label for="billingStreetAddress">Street Address</label><br/>
-					<textarea class="billingInput" id="billingStreetAddress" name="billingStreetAddress" value="" disabled="true" placeholder="Street Address"></textarea><br/>
+					<input class="billingInput" type="text" id="billingStreetAddress" name="billingStreetAddress" value="" disabled="true" placeholder="Street Address"></input><br/>
 					<label for="billingAptOrSuit">Apt. or suite (optional)</label><br/>
-					<textarea class="billingInput" id="billingAptOrSuit" name="billingAptOrSuit" value="" disabled="true" placeholder="Apt. or suite (optional)"></textarea><br/>
+					<input class="billingInput" type="text" id="billingAptOrSuit" name="billingAptOrSuit" value="" disabled="true" placeholder="Apt. or suite (optional)"></input><br/>
 					<label for="billingCountry">Country</label><br/>
 					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="" disabled="true" placeholder="Country" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="billingProvince">Province</label><br/>
