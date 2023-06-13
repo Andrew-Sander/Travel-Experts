@@ -15,11 +15,18 @@
             <!-- Registration form (multi-step) -->
             <div id="registerForm">
                 <h2 style="color: brown;">Username or password is incorrect</h2>
-            </div>  
+                <button id="clearBtn" type="button" onclick="goBack()">Go back</button>
+            </div>
+            
         </div>
     </main>
     <footer>
         
     </footer>
+    <script>
+        function goBack() {
+            history.go(-1);
+        }
+    </script>
 </body>
 </html>
