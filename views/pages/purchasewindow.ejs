@@ -45,7 +45,7 @@
 		<%- include('../partials/header') %>
 		<div class="customerFormDiv">
 			<!--Might wanna put tool tips explaining what we're collecting the data for-->
-			<form class="customerForm" action="bouncer.php">
+			<form class="customerForm" action="bouncer.php" method="get">
 				<div style="text-align: center">
 					<span class="step">1</span>
 					<span class="step">2</span>
@@ -75,22 +75,22 @@
 				<div class=tab id="shippingAddress">
 					<h2>Home Address</h2>
 					<label for="custFirstName">First name</label><br/>
-					<input type="text" id="custFirstName" name="custFirstName" value="" placeholder="First name" oninput="this.className = ''"></input><br/>
+					<input type="text" id="custFirstName" name="custFirstName" value="" placeholder="First name" oninput="this.className = 'mandatory'"></input><br/>
 					
 					
 					<label for="custLastName">Last name</label><br/>
-					<input type="text" id="custLastName" name="custLastName" value="" placeholder="Last Name" oninput="this.className = ''"></input><br/>
+					<input type="text" id="custLastName" name="custLastName" value="" placeholder="Last Name" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custStreetAddress">Street Address</label><br/>
-					<textarea id="custStreetAddress" name="custStreetAddress" value="" placeholder="Street Address" oninput="this.className = ''"></textarea><br/>
+					<textarea id="custStreetAddress" name="custStreetAddress" value="" placeholder="Street Address" oninput="this.className = 'mandatory'"></textarea><br/>
 					<label for="custAptOrSuit">Apt. or suite (optional)</label><br/>
 					<textarea id="custAptOrSuit" name="custAptOrSuit" placeholder="Apt. or suite (optional)"></textarea><br/>
 					<label for="custCountry">Country</label><br/>
-					<input type="text" id="custCountry" name="custCountry" value="" placeholder="Country" oninput="this.className = ''"></input><br/>
+					<input type="text" id="custCountry" name="custCountry" value="" placeholder="Country" oninput="this.className = 'mandatory'"></input><br/>
 					
 					<!--if we support multiple countries we'll need to change the input labels for province to states if US is selected-->
 					
 					<label for="custProvince">Province</label><br/>
-					<input type="text" id="custProvince" name="custProvince" value="" placeholder="Province" oninput="this.className = ''"></input><br/>
+					<input type="text" id="custProvince" name="custProvince" value="" placeholder="Province" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custCity">City</label><br/>
 					<input type="text" id="custCity" name="custCity" value="" placeholder="City" oninput="this.className = ''"></input><br/>
 				</div>
@@ -124,11 +124,11 @@
 					<h2>Payment Details</h2>
 					<!--Add picture button selectors for MasterCard and Visa and maybe a third choice-->
 					<label for="cardNumber">Card Number</label><br/>
-					<input type="text" id="cardNumber" name="cardNumber" value="" placeholder="---- ---- ---- ----" oninput="this.className = ''"></input><br/>
+					<input type="text" id="cardNumber" name="cardNumber" value="" placeholder="---- ---- ---- ----" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="cardExpiration">Expiration Date</label><br/>
-					<input type="text" id="cardExpiration" name="cardExpiration" value="" placeholder="mm/yy" oninput="this.className = ''"></input><br/>
+					<input type="text" id="cardExpiration" name="cardExpiration" value="" placeholder="mm/yy" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="cardCVV">CVV</label><br/> <!--Would be cool to put little diagram of the card layout INSIDE the input box to the far right-->
-					<input type="text" id="cardCVV" name="cardCVV" value="" placeholder="---" oninput="this.className = ''"></input><br/>
+					<input type="text" id="cardCVV" name="cardCVV" value="" placeholder="---" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custPhone">Phone (optional)</label><br/>
 					<input type="text" id="custPhone" name="custPhone" value="" placeholder="Phone" oninput="this.className = ''"></input><br/>
 					<label for="custEmail">Email (optional)</label><br/>
@@ -187,8 +187,8 @@
 			function validateForm() {
 				var valid = true;
 				var tabsList = document.getElementsByClassName("tab");
-				var currentTabFields = tabsList[currentTab].getElementsByTagName("input");
-				
+				//var currentTabFields = tabsList[currentTab].getElementsByTagName("input");
+				var currentTabFields = tabsList[currentTab].getElementsByClassName("mandatory");
 				for (i=0; i<currentTabFields.length; i++) {
 					if ((currentTabFields[i].value == false) || (currentTabFields[i].value == "")){
 						currentTabFields[i].className += " invalid";
@@ -206,6 +206,11 @@
 					stepsList[i].className = stepsList[i].className.replace(" active", "");
 				}
 				stepsList[n].className += " active";
+			}
+
+			function addMandatory() {
+				var tabsList = document.getElementsByClassName("tab");
+				var currentTabFields = tabsList[CurrentTab].getElementsByTagName("input");
 			}
 		</script>
 	</body>
