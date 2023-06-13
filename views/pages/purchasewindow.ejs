@@ -18,7 +18,7 @@
 				 margin: 0;
 			}
 			body {
-				background-image: url("/images/maldives.jpg");
+				background-image: url("/images/mountainlake.jpg");
 			}
 			#sameAsShippingAddress {
 				vertical-align: middle;
@@ -55,7 +55,7 @@
 		<%- include('../partials/header') %>
 		<div class="customerFormDiv">
 			<!--Might wanna put tool tips explaining what we're collecting the data for-->
-			<form class="customerForm" action="bouncer.php" method="post"	>
+			<form class="customerForm" action="/thankyou" method="post"	>
 				<div style="text-align: center">
 					<span class="step">1</span>
 					<span class="step">2</span>
@@ -187,7 +187,7 @@
 				tabsList[currentTab].style.display = "none";
 				currentTab += n;
 				if (currentTab >= tabsList.length) {
-					document.getElementsByClassName("customerForm").submit();
+					document.getElementsByClassName("customerForm")[0].submit();
 					return false;
 				}
 				showTab(currentTab);
