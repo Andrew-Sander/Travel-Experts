@@ -200,7 +200,19 @@ a.registerLink:hover {
 input.invalid {
 	border-color: #e04f4f;
 }
-
+.tab textarea {
+	padding: 8px;
+	width: 100%;
+	font-size: 13px;
+	font: Arial;
+	border: 1px solid darkgray;
+	border-radius: 5px;
+	box-sizing: border-box;
+	margin: 1px 0;
+}
+textarea.invalid {
+	border-color: #e04f4f;
+}
 .tab {
 	display: none;
 }

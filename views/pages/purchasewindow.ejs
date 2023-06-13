@@ -212,15 +212,24 @@
 			function addMandatory(nonMandatoryFieldsIndex) {
 				var tabsList = document.getElementsByClassName("tab");
 				var currentTabFields = tabsList[currentTab].getElementsByTagName("input");
-				for (i=0;i<currentTabFields.length;i++) {
-					var ignoreField = false;
-					for (j=0;j<nonMandatoryFieldsIndex.length;j++) {
-						if (i == nonMandatoryFieldsIndex[j]){
-							ignoreField = true;
+				var boxIsChecked = document.getElementById("sameAsShippingAddress").checked;
+				//console.log("addMandatory is called");
+				if (!boxIsChecked) {
+					for (i=0;i<currentTabFields.length;i++) {
+						var ignoreField = false;
+						for (j=0;j<nonMandatoryFieldsIndex.length;j++) {
+							if (i == nonMandatoryFieldsIndex[j]){
+								ignoreField = true;
+							}
+						}
+						if (!ignoreField) {
+							currentTabFields[i].className+=" mandatory";
 						}
 					}
-					if (!ignoreField) {
-						currentTabFields[i].className+=" mandatory";
+				}
+				else {
+					for (i=0;i<currentTabFields.length;i++) {
+						currentTabFields[i].className = currentTabFields[i].className.replace(" mandatory", "");
 					}
 				}
 			}
