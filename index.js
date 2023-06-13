@@ -70,7 +70,6 @@ app.get('/purchasewindow', (req, res) => {
 	var sql = "SELECT PkgName FROM packages WHERE PackageId=?"
 	dbh.query({"sql": sql, "values": [req.params.id]}, (err, result) => {
 		if (err) throw err;
-		console.log('got purchasewindow');
 		res.render('pages/purchasewindow' , {
 			cart: result
 		} );
