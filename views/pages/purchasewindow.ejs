@@ -45,7 +45,7 @@
 		<%- include('../partials/header') %>
 		<div class="customerFormDiv">
 			<!--Might wanna put tool tips explaining what we're collecting the data for-->
-			<form class="customerForm" action="bouncer.php" method="get">
+			<form class="customerForm" action="bouncer.php">
 				<div style="text-align: center">
 					<span class="step">1</span>
 					<span class="step">2</span>
@@ -75,47 +75,47 @@
 				<div class=tab id="shippingAddress">
 					<h2>Home Address</h2>
 					<label for="custFirstName">First name</label><br/>
-					<input type="text" id="custFirstName" name="custFirstName" value="" placeholder="First name" oninput="this.className = 'mandatory'"></input><br/>
+					<input type="text" class="mandatory" id="custFirstName" name="custFirstName" value="" placeholder="First name" oninput="this.className = 'mandatory'"></input><br/>
 					
 					
 					<label for="custLastName">Last name</label><br/>
-					<input type="text" id="custLastName" name="custLastName" value="" placeholder="Last Name" oninput="this.className = 'mandatory'"></input><br/>
+					<input type="text" class="mandatory" id="custLastName" name="custLastName" value="" placeholder="Last Name" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custStreetAddress">Street Address</label><br/>
-					<textarea id="custStreetAddress" name="custStreetAddress" value="" placeholder="Street Address" oninput="this.className = 'mandatory'"></textarea><br/>
+					<textarea class="mandatory" id="custStreetAddress" name="custStreetAddress" value="" placeholder="Street Address" oninput="this.className = 'mandatory'"></textarea><br/>
 					<label for="custAptOrSuit">Apt. or suite (optional)</label><br/>
 					<textarea id="custAptOrSuit" name="custAptOrSuit" placeholder="Apt. or suite (optional)"></textarea><br/>
 					<label for="custCountry">Country</label><br/>
-					<input type="text" id="custCountry" name="custCountry" value="" placeholder="Country" oninput="this.className = 'mandatory'"></input><br/>
+					<input type="text" class="mandatory" id="custCountry" name="custCountry" value="" placeholder="Country" oninput="this.className = 'mandatory'"></input><br/>
 					
 					<!--if we support multiple countries we'll need to change the input labels for province to states if US is selected-->
 					
 					<label for="custProvince">Province</label><br/>
-					<input type="text" id="custProvince" name="custProvince" value="" placeholder="Province" oninput="this.className = 'mandatory'"></input><br/>
+					<input type="text" class="mandatory" id="custProvince" name="custProvince" value="" placeholder="Province" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custCity">City</label><br/>
-					<input type="text" id="custCity" name="custCity" value="" placeholder="City" oninput="this.className = ''"></input><br/>
+					<input type="text" class="mandatory" id="custCity" name="custCity" value="" placeholder="City" oninput="this.className = ''"></input><br/>
 				</div>
 
 				<!--BILLING ADDRESS-->
 				<div class=tab id="billingAddress">
 					<h2 style="display: inline-block">Billing Information &nbsp;&nbsp;</h2>
 					<label for="sameAsShippingAddress">Home Address is same as Billing Address</label>
-					<input type="checkbox" id="sameAsShippingAddress" name="sameAsShippingAddress" onClick="toggleBilling(this.value)" checked="checked" oninput="this.className = ''"></input>
+					<input type="checkbox" id="sameAsShippingAddress" name="sameAsShippingAddress" onClick="toggleBilling(this.value)" checked="checked" oninput="addMandatory([])"></input>
 					
 					<label for="billingFirstName">First name</label><br/>
-					<input class="billingInput" type="text" id="billingFirstName" name="billingFirstName" value="" disabled="true" placeholder="First name" oninput="this.className = ''"></input><br/>
+					<input class="billingInput" type="text" id="billingFirstName" name="billingFirstName" value="" disabled="true" placeholder="First name" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="billingLastName">Last name</label><br/>
-					<input class="billingInput" type="text" id="billingLastName" name="billingLastName" value="" disabled="true" placeholder="Last Name" oninput="this.className = ''"></input><br/>
+					<input class="billingInput" type="text" id="billingLastName" name="billingLastName" value="" disabled="true" placeholder="Last Name" oninput="this.className = 'mandatory'"></input><br/>
 					
 					<label for="billingStreetAddress">Street Address</label><br/>
 					<textarea class="billingInput" id="billingStreetAddress" name="billingStreetAddress" value="" disabled="true" placeholder="Street Address"></textarea><br/>
 					<label for="billingAptOrSuit">Apt. or suite (optional)</label><br/>
 					<textarea class="billingInput" id="billingAptOrSuit" name="billingAptOrSuit" value="" disabled="true" placeholder="Apt. or suite (optional)"></textarea><br/>
 					<label for="billingCountry">Country</label><br/>
-					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="" disabled="true" placeholder="Country" oninput="this.className = ''"></input><br/>
+					<input class="billingInput" type="text" id="billingCountry" name="billingCountry" value="" disabled="true" placeholder="Country" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="billingProvince">Province</label><br/>
-					<input class="billingInput" type="text" id="billingProvince" name="billingProvince" value="" disabled="true" placeholder="Province" oninput="this.className = ''"></input><br/>
+					<input class="billingInput" type="text" id="billingProvince" name="billingProvince" value="" disabled="true" placeholder="Province" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="billingCity">City</label><br/>
-					<input class="billingInput" type="text" id="billingCity" name="billingCity" value="" disabled="true" placeholder="City" oninput="this.className = ''"></input><br/>
+					<input class="billingInput" type="text" id="billingCity" name="billingCity" value="" disabled="true" placeholder="City" oninput="this.className = 'mandatory'"></input><br/>
 				</div>
 
 
@@ -124,11 +124,11 @@
 					<h2>Payment Details</h2>
 					<!--Add picture button selectors for MasterCard and Visa and maybe a third choice-->
 					<label for="cardNumber">Card Number</label><br/>
-					<input type="text" id="cardNumber" name="cardNumber" value="" placeholder="---- ---- ---- ----" oninput="this.className = 'mandatory'"></input><br/>
+					<input type="text" class="mandatory" id="cardNumber" name="cardNumber" value="" placeholder="---- ---- ---- ----" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="cardExpiration">Expiration Date</label><br/>
-					<input type="text" id="cardExpiration" name="cardExpiration" value="" placeholder="mm/yy" oninput="this.className = 'mandatory'"></input><br/>
+					<input type="text" class="mandatory" id="cardExpiration" name="cardExpiration" value="" placeholder="mm/yy" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="cardCVV">CVV</label><br/> <!--Would be cool to put little diagram of the card layout INSIDE the input box to the far right-->
-					<input type="text" id="cardCVV" name="cardCVV" value="" placeholder="---" oninput="this.className = 'mandatory'"></input><br/>
+					<input type="text" class="mandatory" id="cardCVV" name="cardCVV" value="" placeholder="---" oninput="this.className = 'mandatory'"></input><br/>
 					<label for="custPhone">Phone (optional)</label><br/>
 					<input type="text" id="custPhone" name="custPhone" value="" placeholder="Phone" oninput="this.className = ''"></input><br/>
 					<label for="custEmail">Email (optional)</label><br/>
@@ -138,10 +138,8 @@
 				</div>
 				<div class="buttonGroup">
 					<div style="float:right;">
-						
 						<button type="button" class="purchaseFormButton" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
 						<button type="button" class="purchaseFormButton" id="nextBtn" onclick="nextPrev(1)">Next</button>
-						
 					</div>
 				</div>
 				<!--<button type="submit">Proceed to Purchase</button>-->
@@ -151,7 +149,7 @@
 		<footer>
 		</footer>
 		<script>
-			var currentTab = 1;
+			var currentTab = 0;
 			showTab(currentTab);
 			function showTab(n) {
 				var tabsList = document.getElementsByClassName("tab");
@@ -162,7 +160,7 @@
 				else {
 					document.getElementById("prevBtn").style.display = "inline-block";
 				}
-				if (n == (tabsList.length)) {
+				if (n == (tabsList.length - 1)) {
 					document.getElementById("nextBtn").innerHTML = "Submit";
 				}
 				else {
@@ -178,7 +176,7 @@
 				tabsList[currentTab].style.display = "none";
 				currentTab += n;
 				if (currentTab >= tabsList.length) {
-					document.getElementById("customerForm").submit();
+					document.getElementsByClassName("customerForm").submit();
 					return false;
 				}
 				showTab(currentTab);
@@ -207,10 +205,24 @@
 				}
 				stepsList[n].className += " active";
 			}
-
-			function addMandatory() {
+			
+			// Function to add mandatory fields. For toggling billing info.
+			// nonMandatoryFieldsIndex should be an array of the optional field indexs (first field of tab is 0).
+			
+			function addMandatory(nonMandatoryFieldsIndex) {
 				var tabsList = document.getElementsByClassName("tab");
-				var currentTabFields = tabsList[CurrentTab].getElementsByTagName("input");
+				var currentTabFields = tabsList[currentTab].getElementsByTagName("input");
+				for (i=0;i<currentTabFields.length;i++) {
+					var ignoreField = false;
+					for (j=0;j<nonMandatoryFieldsIndex.length;j++) {
+						if (i == nonMandatoryFieldsIndex[j]){
+							ignoreField = true;
+						}
+					}
+					if (!ignoreField) {
+						currentTabFields[i].className+=" mandatory";
+					}
+				}
 			}
 		</script>
 	</body>
