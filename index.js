@@ -75,7 +75,9 @@ app.get('/purchasewindow', (req, res) => {
 		} );
 	} );
 } );
-
+app.post('/thankyou', (req,res) => {
+	res.render('pages/thankyou');
+} );
 app.get("/contact", (req, res) => {
 	var dbh = getDBH();
     dbh.connect((err) => {

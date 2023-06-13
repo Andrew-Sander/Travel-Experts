@@ -348,6 +348,29 @@ textarea.invalid {
 
 
 
+/*Thank you page*/
+
+#message {
+	text-align: center;
+	position: relative;
+	margin: auto;
+	padding: 0px 20px 10px 20px;
+}
+#thankyouContent {
+	background-color: white;
+	border-radius: 8px;
+	margin: 0;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 95%;
+}
+
+/*End of thank you page*/
+
+
+
 /* purchase window styles*/
 
 /*Heads up. I'm changing the <textarea> tag without selecting
