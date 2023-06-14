@@ -470,15 +470,12 @@ div.contactInfo {
 }
 
 div.contactSelect {
+	position: absolute;
 	text-align: center;
 	left: 40%;
 	position: absolute;
 	font-size: 20px;
 	top: 1200px;
-}
-
-#contactLabel {
-	color: red;
 }
 
 /* End of Contact*/
