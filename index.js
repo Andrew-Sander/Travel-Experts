@@ -138,7 +138,13 @@ app.post("/register", (request, response) => {
     			console.log("1 record inserted");
  			});
    			response.render('pages/welcome', {
-				CustFirstName: CustFirstName
+				CustFirstName: CustFirstName,
+				CustAddress: CustAddress,
+				CustCity: CustCity,
+				CustProv: CustProv,
+				CustPostal: CustPostal,
+				CustHomePhone: CustHomePhone,
+				CustEmail: CustEmail
 			});
 		}
 
@@ -161,9 +167,21 @@ app.post('/login', function(request, response) {
 			if (results.length > 0) {
 				
 				var CustFirstName = results[0].CustFirstName;
+				var CustAddress = results[0].CustAddress;
+				var CustCity = results[0].CustCity;
+				var CustProv = results[0].CustProv;
+				var CustPostal = results[0].CustPostal;
+				var CustHomePhone = results[0].CustHomePhone;
+				var CustEmail = results[0].CustEmail;
 
 				response.render('pages/welcome', {
-					CustFirstName: CustFirstName
+					CustFirstName: CustFirstName,
+					CustAddress: CustAddress,
+					CustCity: CustCity,
+					CustProv: CustProv,
+					CustPostal: CustPostal,
+					CustHomePhone: CustHomePhone,
+					CustEmail: CustEmail
 				});
 			} else {
 				response.render('pages/login-error');

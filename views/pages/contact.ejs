@@ -9,32 +9,6 @@
         <title>Travel-Expert</title>
         <link rel="stylesheet" href="/styles.css"/>
         <style>
-			
-            /*link to other pages*/
-            /* ul {
-                list-style-type: none;
-                padding: 0px;
-                margin: 0px;
-                overflow: hidden;
-            }
-            li {
-                float: left;
-            }
-            a:link, a:visited {
-                display: block;
-                font-weight: bold;
-                color: white;
-                background-color: skyblue;
-                width: 359px;
-                text-align: center;
-                padding: 10px;
-                text-decoration: none;
-                text-transform: uppercase;
-            } 
-            a:hover {
-                background-color: red
-            } */
-            /*contact info*/
             div.info {
                 position: absolute;
                 top: 950px;
@@ -55,15 +29,19 @@
             }
             .textChange {
                 position: absolute;
-                top:1100px;
-                left: 20%;
+                text-align: center;
+                top:1120px;
+                left: 14%;
                 transition: color 0.3s ease;
                 cursor: pointer;
                 width:1200px;
-                
             }
             .textChange:hover {
                 color: red;
+            }
+            .selectOption{
+                position: absolute;
+                text-align: center;
             }
         </style>
     </head>
@@ -75,14 +53,14 @@
             <p>Email: travelexperts@bussiness.com</p><br />
             <p>Location: 1301 16 Ave NW, Calgary AB T2M 0L4</p><br />
         </div><br />
-        <h1 class="textChange" id="text">Package Sales!</h1>
+        <h1 class="textChange" id="text">Click to see Sales!</h1>
         <div class="contactSlide">
             <p id="moveText">&#8691 Contact Our Superstar travel agents!!! &#8691</p>
         </div>
         <div class="contactSelect">
             <select id="select" onchange="onChange(this.value)">
                 <% result.forEach(function(agent, i) { %>
-                    <option value="<%= agent.AgtBusPhone%> <%= agent.AgtEmail %>">
+                    <option class="selectOption" value="<%= agent.AgtBusPhone%> <%= agent.AgtEmail %>">
                         <%= agent.AgtFirstName %> <%= agent.AgtLastName %>
                     </option>
                 <% }); %>
@@ -102,10 +80,10 @@
             document.addEventListener('DOMContentLoaded', function() {
                 var textElement = document.getElementById('text');
                 var phrases = [
-                    'Limited-Time Offer:Asian Expedition - Now just2800 CAD  for 14 days!', 
-                    'Hello', 
-                    'Nice to meet you', 
-                    'Glad you came'
+                    "Limited-Time Offer:Asian Expedition - Now just2800 CAD  for 14 days!", 
+                    "Valentine's day sale! 15% off for two people!", 
+                    "Canada Day sale is coming...", 
+                    "MEXICO SEASON!!!- talk to one of out agents for details."
                 ];
                 var currentIndex = 0;
 
@@ -115,7 +93,6 @@
                 });
             });
 
-            
             document.onscroll = function () {
                 if (window.scrollY > "10px") {
                     document.getElementById('moveText').style.position = 'absolute';
@@ -124,20 +101,6 @@
                     document.getElementById('moveText').style.position = 'fixed';
                 }
             }
-			/*document.onscroll = function () {
-				if (window.innerHeight + window.scrollY > document.body.clientHeight) {
-					var contactSlides = document.getElementsByClassName('contactSlide');
-					for (var i = 0; i < contactSlides.length; i++) {
-						contactSlides[i].style.display = 'none';
-					}
-				}
-				else {
-					var contactSlides = document.getElementsByClassName('contactSlide');
-					for (var i = 0; i < contactSlides.length; i++) {
-						contactSlides[i].style.display = 'block';
-					}
-				}
-			};*/
         </script>
     </body> 
 </html >

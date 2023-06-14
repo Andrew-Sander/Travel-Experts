@@ -155,12 +155,13 @@ a.registerLink:hover {
 }
 #welcomeForm {
     position: relative;
+	top: 35px;
     background-color: white;
-    margin: auto;
+    margin:auto;
     padding: 40px;
     max-width: 80%;
     border-radius: 8px;
-	height: 400px;
+	height: 500px;
 }
 
 /* registration form styling */
@@ -469,15 +470,12 @@ div.contactInfo {
 }
 
 div.contactSelect {
+	position: absolute;
 	text-align: center;
 	left: 40%;
 	position: absolute;
 	font-size: 20px;
 	top: 1200px;
-}
-
-#contactLabel {
-	color: red;
 }
 
 /* End of Contact*/
